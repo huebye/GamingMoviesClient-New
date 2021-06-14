@@ -151,7 +151,7 @@ class MainView extends React.Component {
               }
               } />
 
-              <Route path="/users/:name" render={({ history }) => {
+              <Route path="https://gamingmovies.netlify.app/users/:name" render={({ history }) => {
                 if (!user) return <Col>
                                   <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                                 </Col>
