@@ -95,7 +95,7 @@ export class ProfileView extends React.Component {
           <div className="profile-view" style={{ fontSize: '28px', textAlign: 'center', padding: '20px'}}>
               <div className="profile-info" style={{padding: '30px'}}>
                 <div>
-                  <span>Username: {userData}</span>
+                  <span><h3>Username: {userData}</h3></span>
                 </div>
                   <div style={{paddingTop: '20px'}}>
                   <Link to={`/`}>
