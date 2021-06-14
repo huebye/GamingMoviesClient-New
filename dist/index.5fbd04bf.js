@@ -35002,10 +35002,15 @@ class NavbarView extends _reactDefault.default.Component {
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
             style: {
+                borderRadius: '0',
+                fontSize: '25px',
+                height: '53px',
                 color: 'black',
                 backgroundColor: 'white',
                 width: 'auto',
-                textAlign: 'center'
+                textAlign: 'center',
+                textDecoration: 'none',
+                border: 'none'
             },
             __source: {
                 fileName: "/Users/thomashubner/careerfoundry/GamingMoviesClient/src/components/navbar-view/navbar-view.jsx",

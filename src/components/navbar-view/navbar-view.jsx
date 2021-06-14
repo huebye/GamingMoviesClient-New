@@ -34,7 +34,7 @@ export class NavbarView extends React.Component{
                 <Link to="/"><Navbar.Brand style={{ position: 'absolute', left: '10px' , fontSize: '38px', color: 'white', fontWeight: '800'}}>GAMING MOVIES</Navbar.Brand></Link>
                 </Container>
                 <Nav.Item >
-                  <Link to={`/users/${user}`}><Button style={{ color: 'black', backgroundColor:'white', width: 'auto', textAlign: 'center' }}>Profile</Button></Link>
+                  <Link to={`/users/${user}`}><Button style={{ borderRadius: '0' ,fontSize: '25px',height: '53px' ,color: 'black', backgroundColor:'white', width: 'auto', textAlign: 'center', textDecoration: 'none', border: 'none' }}>Profile</Button></Link>
                 </Nav.Item>
                 <Nav.Item >
                     <Nav.Link style={{ color: 'white', backgroundColor:'black', width: 'auto', textAlign: 'center' }} onClick={() => { this.onLoggedOut() }}>Log Out</Nav.Link>
