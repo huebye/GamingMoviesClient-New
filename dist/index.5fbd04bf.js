@@ -34931,7 +34931,7 @@ class NavbarView extends _reactDefault.default.Component {
         window.open("/", "_self");
     }
     render() {
-        const { user  } = this.props;
+        const user = localStorage.getItem('user');
         return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
             __source: {
                 fileName: "/Users/thomashubner/careerfoundry/GamingMoviesClient/src/components/navbar-view/navbar-view.jsx",
@@ -34992,7 +34992,7 @@ class NavbarView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_navDefault.default.Link, {
-            href: "/users/${user}",
+            href: `/users/${user}`,
             style: {
                 color: 'black',
                 backgroundColor: 'white',
