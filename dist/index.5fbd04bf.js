@@ -34930,19 +34930,23 @@ class NavbarView extends _reactDefault.default.Component {
         });
         window.open("/", "_self");
     }
+    onProfile() {
+        let user = localStorage.getItem('user');
+        window.open(`/users/${user}`, "_self");
+    }
     render() {
-        const user = localStorage.getItem('user');
+        let user = localStorage.getItem('user');
         return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
             __source: {
                 fileName: "/Users/thomashubner/careerfoundry/GamingMoviesClient/src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 29
+                lineNumber: 34
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "main-view justify-content-md-center",
             __source: {
                 fileName: "/Users/thomashubner/careerfoundry/GamingMoviesClient/src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 30
+                lineNumber: 35
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_navDefault.default, {
@@ -34956,20 +34960,20 @@ class NavbarView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/thomashubner/careerfoundry/GamingMoviesClient/src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 31
+                lineNumber: 36
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
             __source: {
                 fileName: "/Users/thomashubner/careerfoundry/GamingMoviesClient/src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 32
+                lineNumber: 37
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: "/",
             __source: {
                 fileName: "/Users/thomashubner/careerfoundry/GamingMoviesClient/src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 33
+                lineNumber: 38
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_navbarDefault.default.Brand, {
@@ -34982,32 +34986,34 @@ class NavbarView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/thomashubner/careerfoundry/GamingMoviesClient/src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 33
+                lineNumber: 38
             },
             __self: this
         }, "GAMING MOVIES"))), /*#__PURE__*/ _reactDefault.default.createElement(_navDefault.default.Item, {
             __source: {
                 fileName: "/Users/thomashubner/careerfoundry/GamingMoviesClient/src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 35
+                lineNumber: 40
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_navDefault.default.Link, {
-            href: `/users/${user}`,
             style: {
                 color: 'black',
                 backgroundColor: 'white',
                 width: 'auto',
                 textAlign: 'center'
             },
+            onClick: ()=>{
+                this.onProfile();
+            },
             __source: {
                 fileName: "/Users/thomashubner/careerfoundry/GamingMoviesClient/src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 36
+                lineNumber: 41
             },
             __self: this
         }, "Profile")), /*#__PURE__*/ _reactDefault.default.createElement(_navDefault.default.Item, {
             __source: {
                 fileName: "/Users/thomashubner/careerfoundry/GamingMoviesClient/src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 38
+                lineNumber: 43
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_navDefault.default.Link, {
@@ -35022,7 +35028,7 @@ class NavbarView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/thomashubner/careerfoundry/GamingMoviesClient/src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 39
+                lineNumber: 44
             },
             __self: this
         }, "Log Out"))))));
