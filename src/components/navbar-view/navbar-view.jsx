@@ -46,4 +46,3 @@ export class NavbarView extends React.Component{
   </Container>
 
     )}}
-export default NavbarView;

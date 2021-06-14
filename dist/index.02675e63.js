@@ -41825,7 +41825,6 @@ try {
       );
     }
   }
-  exports.default = NavbarView;
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
