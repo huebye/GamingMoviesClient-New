@@ -41781,7 +41781,7 @@ try {
             columnNumber: 17
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapNavDefault.default.Link, {
-          href: "/users/${user}",
+          href: "https://elated-boyd-1f0080.netlify.app/users/${user}",
           style: {
             color: 'black',
             backgroundColor: 'white',
