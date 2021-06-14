@@ -41711,14 +41711,16 @@ try {
       });
       window.open("/", "_self");
     }
+    onProfile() {
+      window.open("/users/${user}", "_self");
+    }
     render() {
-      const {user} = this.props;
       return (
         /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapContainerDefault.default, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 29,
+            lineNumber: 32,
             columnNumber: 12
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
@@ -41726,7 +41728,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 30,
+            lineNumber: 33,
             columnNumber: 9
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapNavDefault.default, {
@@ -41741,14 +41743,14 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 31,
+            lineNumber: 34,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapContainerDefault.default, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 32,
+            lineNumber: 35,
             columnNumber: 15
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
@@ -41756,7 +41758,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 33,
+            lineNumber: 36,
             columnNumber: 17
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapNavbarDefault.default.Brand, {
@@ -41770,35 +41772,37 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 33,
+            lineNumber: 36,
             columnNumber: 30
           }
         }, "GAMING MOVIES"))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapNavDefault.default.Item, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35,
+            lineNumber: 38,
             columnNumber: 17
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapNavDefault.default.Link, {
-          href: "https://elated-boyd-1f0080.netlify.app/users/${user}",
           style: {
             color: 'black',
             backgroundColor: 'white',
             width: 'auto',
             textAlign: 'center'
           },
+          onClick: () => {
+            this.onProfile();
+          },
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36,
+            lineNumber: 39,
             columnNumber: 21
           }
         }, "Profile")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapNavDefault.default.Item, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38,
+            lineNumber: 41,
             columnNumber: 17
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapNavDefault.default.Link, {
@@ -41814,7 +41818,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39,
+            lineNumber: 42,
             columnNumber: 21
           }
         }, "Log Out")))))
