@@ -11,13 +11,6 @@ import { Link } from "react-router-dom";
 
 export class NavbarView extends React.Component{
 
-  constructor(){
-    super();
-    this.state = {
-        user: ""
-    }
-    
-  }
   
   onLoggedOut() {
     localStorage.removeItem('token');
@@ -32,6 +25,7 @@ export class NavbarView extends React.Component{
   }
 
   render(){
+    const { user } = this.props
     return(<Container>
         <Row className="main-view justify-content-md-center">
             <Nav as="ul" style={{ maxHeight: '60px', fontSize: '25px', justifyContent: 'flex-end', backgroundColor: 'rgba(194, 163, 255, 0.8)', minWidth: '100vW'}}>

@@ -19,8 +19,7 @@ export class ProfileView extends React.Component {
         password: "",
         email: "",
         birthday: "",
-        favoriteMovies: [],
-        movies: ""
+        favoriteMovies: []
       }
     };
 
@@ -127,7 +126,7 @@ export class ProfileView extends React.Component {
                 {favoriteMovieList.map((movie) => {
             return (
               <Row  style={{ margin: '0 auto', justifyContent: 'center'}}>
-              <Col md={3} key={movie._id}>
+              <Col md={2.5} key={movie._id}>
                 <Card className="profilecard" style={{ border: 'none'}}>
                   <Card.Img variant="top" src="https://picsum.photos/200/300" style={{ height: '160px'}} />
                   <Card.Body style={{backgroundColor: 'rgba(255, 255, 255, 0.6)'}}>

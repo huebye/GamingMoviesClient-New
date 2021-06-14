@@ -3,6 +3,8 @@ import axios from 'axios';
 import PropTypes from 'prop-types'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
 import { Link } from "react-router-dom";
 import Container from 'react-bootstrap/esm/Container';
@@ -68,6 +70,12 @@ export function RegistrationView() {
 
   
     return (
+      <div>
+      <Nav as="ul" style={{ maxHeight: '60px', fontSize: '25px', justifyContent: 'flex-end', backgroundColor: 'rgba(194, 163, 255, 0.8)', minWidth: '100%'}}>
+              <Container>
+                <Link to="/"><Navbar.Brand style={{ position: 'absolute', left: '10px' , fontSize: '44px', color: 'white', fontWeight: '800'}}>GAMING MOVIES</Navbar.Brand></Link>
+                </Container>
+        </Nav>
       <Container style={{display: 'flex'}}>
         <Form style={{fontSize: '28px', maxWidth: '500px', textAlign: 'center', margin: '0 auto', marginTop: '170px', background: 'rgba(255, 255, 255, 0.26)', padding: '30px', borderRadius: '4px'}}>
         <Form.Group controlId="formName">
@@ -123,6 +131,7 @@ export function RegistrationView() {
         </Button>
       </Form>
       </Container>
+      </div>
     );
     
   }

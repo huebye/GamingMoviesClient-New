@@ -53,6 +53,7 @@ class MainView extends React.Component {
       onLoggedIn(authData) {
         console.log(authData);
         this.setState({
+          user: this.props.setUser(authData.user),
           userEmail: authData.user.Email,
           userBirthday: authData.user.Birthday,
           favoriteMovies: authData.user.FavoriteMovies
@@ -88,8 +89,8 @@ class MainView extends React.Component {
       }
 
       render() {
-        const { userEmail, userBirthday} = this.state;
-        const { movies, user } = this.props;
+        const { userEmail, userBirthday, user} = this.state;
+        const { movies } = this.props;
     
         return (
           <Router>

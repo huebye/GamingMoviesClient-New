@@ -29567,6 +29567,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["bsPrefix", "fluid", "as", "className"];
 var defaultProps = {
   fluid: false
 };
@@ -29577,7 +29578,7 @@ var Container = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
       _ref$as = _ref.as,
       Component = _ref$as === void 0 ? 'div' : _ref$as,
       className = _ref.className,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "fluid", "as", "className"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'container');
   var suffix = typeof fluid === 'string' ? "-" + fluid : '-fluid';
   return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
@@ -29766,6 +29767,7 @@ try {
     onLoggedIn(authData) {
       console.log(authData);
       this.setState({
+        user: this.props.setUser(authData.user),
         userEmail: authData.user.Email,
         userBirthday: authData.user.Birthday,
         favoriteMovies: authData.user.FavoriteMovies
@@ -29795,14 +29797,14 @@ try {
       });
     }
     render() {
-      const {userEmail, userBirthday} = this.state;
-      const {movies, user} = this.props;
+      const {userEmail, userBirthday, user} = this.state;
+      const {movies} = this.props;
       return (
         /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 95,
+            lineNumber: 96,
             columnNumber: 11
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
@@ -29810,7 +29812,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 96,
+            lineNumber: 97,
             columnNumber: 11
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -29822,7 +29824,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 99,
+                  lineNumber: 100,
                   columnNumber: 35
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
@@ -29830,7 +29832,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 100,
+                  lineNumber: 101,
                   columnNumber: 19
                 }
               }))
@@ -29841,7 +29843,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 102,
+                  lineNumber: 103,
                   columnNumber: 49
                 }
               })
@@ -29851,14 +29853,14 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 103,
+                  lineNumber: 104,
                   columnNumber: 25
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_navbarViewNavbarView.NavbarView, {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 104,
+                  lineNumber: 105,
                   columnNumber: 17
                 }
               }), /*#__PURE__*/_reactDefault.default.createElement(_movieslistViewMovieslistViewDefault.default, {
@@ -29866,7 +29868,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 105,
+                  lineNumber: 106,
                   columnNumber: 17
                 }
               }))
@@ -29875,7 +29877,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 98,
+            lineNumber: 99,
             columnNumber: 17
           }
         }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -29887,7 +29889,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 110,
+                  lineNumber: 111,
                   columnNumber: 34
                 }
               })
@@ -29897,14 +29899,14 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 111,
+                  lineNumber: 112,
                   columnNumber: 24
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_registrationViewRegistrationView.RegistrationView, {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 112,
+                  lineNumber: 113,
                   columnNumber: 19
                 }
               }))
@@ -29913,7 +29915,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 109,
+            lineNumber: 110,
             columnNumber: 15
           }
         }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -29924,7 +29926,7 @@ try {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 118,
+                lineNumber: 119,
                 columnNumber: 20
               }
             }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
@@ -29932,7 +29934,7 @@ try {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 119,
+                lineNumber: 120,
                 columnNumber: 21
               }
             }));
@@ -29942,7 +29944,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 121,
+                  lineNumber: 122,
                   columnNumber: 52
                 }
               })
@@ -29952,14 +29954,14 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 122,
+                  lineNumber: 123,
                   columnNumber: 24
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_navbarViewNavbarView.NavbarView, {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 123,
+                  lineNumber: 124,
                   columnNumber: 19
                 }
               }), /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
@@ -29968,7 +29970,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 124,
+                  lineNumber: 125,
                   columnNumber: 19
                 }
               }))
@@ -29977,7 +29979,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 116,
+            lineNumber: 117,
             columnNumber: 15
           }
         }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -29988,7 +29990,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 130,
+                  lineNumber: 131,
                   columnNumber: 37
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
@@ -29996,7 +29998,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 131,
+                  lineNumber: 132,
                   columnNumber: 19
                 }
               }))
@@ -30007,7 +30009,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 133,
+                  lineNumber: 134,
                   columnNumber: 51
                 }
               })
@@ -30017,14 +30019,14 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 134,
+                  lineNumber: 135,
                   columnNumber: 24
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_navbarViewNavbarView.NavbarView, {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 135,
+                  lineNumber: 136,
                   columnNumber: 19
                 }
               }), /*#__PURE__*/_reactDefault.default.createElement(_directorViewDirectorView.DirectorView, {
@@ -30033,7 +30035,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 136,
+                  lineNumber: 137,
                   columnNumber: 19
                 }
               }))
@@ -30042,7 +30044,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 129,
+            lineNumber: 130,
             columnNumber: 15
           }
         }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -30053,7 +30055,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 142,
+                  lineNumber: 143,
                   columnNumber: 35
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
@@ -30061,7 +30063,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 143,
+                  lineNumber: 144,
                   columnNumber: 17
                 }
               }))
@@ -30072,7 +30074,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 145,
+                  lineNumber: 146,
                   columnNumber: 47
                 }
               })
@@ -30082,14 +30084,14 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 146,
+                  lineNumber: 147,
                   columnNumber: 24
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_navbarViewNavbarView.NavbarView, {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 147,
+                  lineNumber: 148,
                   columnNumber: 17
                 }
               }), /*#__PURE__*/_reactDefault.default.createElement(_genreViewGenreView.GenreView, {
@@ -30098,7 +30100,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 148,
+                  lineNumber: 149,
                   columnNumber: 19
                 }
               }))
@@ -30107,7 +30109,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 141,
+            lineNumber: 142,
             columnNumber: 15
           }
         }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -30118,7 +30120,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 154,
+                  lineNumber: 155,
                   columnNumber: 35
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
@@ -30126,7 +30128,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 155,
+                  lineNumber: 156,
                   columnNumber: 35
                 }
               }))
@@ -30136,14 +30138,14 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 157,
+                  lineNumber: 158,
                   columnNumber: 24
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_navbarViewNavbarView.NavbarView, {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 158,
+                  lineNumber: 159,
                   columnNumber: 19
                 }
               }), /*#__PURE__*/_reactDefault.default.createElement(_profileViewProfileView.ProfileView, {
@@ -30155,7 +30157,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 159,
+                  lineNumber: 160,
                   columnNumber: 19
                 }
               }))
@@ -30164,7 +30166,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 153,
+            lineNumber: 154,
             columnNumber: 15
           }
         }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -30175,7 +30177,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 165,
+                  lineNumber: 166,
                   columnNumber: 35
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
@@ -30183,7 +30185,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 166,
+                  lineNumber: 167,
                   columnNumber: 35
                 }
               }))
@@ -30194,7 +30196,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 168,
+                  lineNumber: 169,
                   columnNumber: 24
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_updateprofileViewUpdateprofileView.UpdateProfile, {
@@ -30203,7 +30205,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 169,
+                  lineNumber: 170,
                   columnNumber: 19
                 }
               }))
@@ -30212,7 +30214,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 164,
+            lineNumber: 165,
             columnNumber: 15
           }
         })))
@@ -35372,6 +35374,7 @@ var _ThemeProvider = require("./ThemeProvider");
 
 var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
 
+var _excluded = ["bsPrefix", "inline", "className", "validated", "as"];
 var FormRow = (0, _createWithBsPrefix.default)('form-row');
 var defaultProps = {
   inline: false
@@ -35384,7 +35387,7 @@ var FormImpl = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
       validated = _ref.validated,
       _ref$as = _ref.as,
       Component = _ref$as === void 0 ? 'form' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "inline", "className", "validated", "as"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form');
   return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
     ref: ref,
@@ -35433,6 +35436,8 @@ var _FormContext = _interopRequireDefault(require("./FormContext"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["id", "bsPrefix", "bsCustomPrefix", "inline", "disabled", "isValid", "isInvalid", "feedbackTooltip", "feedback", "className", "style", "title", "type", "label", "children", "custom", "as"];
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -35463,7 +35468,7 @@ var FormCheck = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
       propCustom = _ref.custom,
       _ref$as = _ref.as,
       as = _ref$as === void 0 ? 'input' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["id", "bsPrefix", "bsCustomPrefix", "inline", "disabled", "isValid", "isInvalid", "feedbackTooltip", "feedback", "className", "style", "title", "type", "label", "children", "custom", "as"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   var custom = type === 'switch' ? true : propCustom;
 
   var _ref2 = custom ? [bsCustomPrefix, 'custom-control'] : [bsPrefix, 'form-check'],
@@ -35617,6 +35622,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
+var _excluded = ["as", "className", "type", "tooltip"];
 var propTypes = {
   /**
    * Specify whether the feedback is for valid or invalid fields
@@ -35639,7 +35645,7 @@ function (_ref, ref) {
       type = _ref$type === void 0 ? 'valid' : _ref$type,
       _ref$tooltip = _ref.tooltip,
       tooltip = _ref$tooltip === void 0 ? false : _ref$tooltip,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["as", "className", "type", "tooltip"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
     ref: ref,
     className: (0, _classnames.default)(className, type + "-" + (tooltip ? 'tooltip' : 'feedback'))
@@ -35671,6 +35677,8 @@ var _FormContext = _interopRequireDefault(require("./FormContext"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["id", "bsPrefix", "bsCustomPrefix", "className", "type", "isValid", "isInvalid", "isStatic", "as"];
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -35689,7 +35697,7 @@ var FormCheckInput = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref)
       isStatic = _ref.isStatic,
       _ref$as = _ref.as,
       Component = _ref$as === void 0 ? 'input' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["id", "bsPrefix", "bsCustomPrefix", "className", "type", "isValid", "isInvalid", "isStatic", "as"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
 
   var _useContext = (0, _react.useContext)(_FormContext.default),
       controlId = _useContext.controlId,
@@ -35749,6 +35757,8 @@ var _FormContext = _interopRequireDefault(require("./FormContext"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["bsPrefix", "bsCustomPrefix", "className", "htmlFor"];
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -35758,7 +35768,7 @@ var FormCheckLabel = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref)
       bsCustomPrefix = _ref.bsCustomPrefix,
       className = _ref.className,
       htmlFor = _ref.htmlFor,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "bsCustomPrefix", "className", "htmlFor"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
 
   var _useContext = (0, _react.useContext)(_FormContext.default),
       controlId = _useContext.controlId,
@@ -35808,6 +35818,8 @@ var _FormContext = _interopRequireDefault(require("./FormContext"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["id", "bsPrefix", "bsCustomPrefix", "disabled", "isValid", "isInvalid", "feedbackTooltip", "feedback", "className", "style", "label", "children", "custom", "lang", "data-browse", "as", "inputAs"];
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -35836,7 +35848,7 @@ var FormFile = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
       Component = _ref$as === void 0 ? 'div' : _ref$as,
       _ref$inputAs = _ref.inputAs,
       inputAs = _ref$inputAs === void 0 ? 'input' : _ref$inputAs,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["id", "bsPrefix", "bsCustomPrefix", "disabled", "isValid", "isInvalid", "feedbackTooltip", "feedback", "className", "style", "label", "children", "custom", "lang", "data-browse", "as", "inputAs"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
 
   var _ref2 = custom ? [bsCustomPrefix, 'custom'] : [bsPrefix, 'form-file'],
       prefix = _ref2[0],
@@ -35904,6 +35916,8 @@ var _FormContext = _interopRequireDefault(require("./FormContext"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["id", "bsPrefix", "bsCustomPrefix", "className", "isValid", "isInvalid", "lang", "as"];
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -35918,7 +35932,7 @@ var FormFileInput = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) 
       lang = _ref.lang,
       _ref$as = _ref.as,
       Component = _ref$as === void 0 ? 'input' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["id", "bsPrefix", "bsCustomPrefix", "className", "isValid", "isInvalid", "lang", "as"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
 
   var _useContext = (0, _react.useContext)(_FormContext.default),
       controlId = _useContext.controlId,
@@ -35964,6 +35978,8 @@ var _FormContext = _interopRequireDefault(require("./FormContext"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["bsPrefix", "bsCustomPrefix", "className", "htmlFor"];
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -35973,7 +35989,7 @@ var FormFileLabel = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) 
       bsCustomPrefix = _ref.bsCustomPrefix,
       className = _ref.className,
       htmlFor = _ref.htmlFor,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "bsCustomPrefix", "className", "htmlFor"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
 
   var _useContext = (0, _react.useContext)(_FormContext.default),
       controlId = _useContext.controlId,
@@ -36010,6 +36026,7 @@ var _warning = _interopRequireDefault(require("warning"));
 var _Feedback = _interopRequireDefault(require("./Feedback"));
 var _FormContext = _interopRequireDefault(require("./FormContext"));
 var _ThemeProvider = require("./ThemeProvider");
+var _excluded = ["bsPrefix", "bsCustomPrefix", "type", "size", "htmlSize", "id", "className", "isValid", "isInvalid", "plaintext", "readOnly", "custom", "as"];
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -36050,7 +36067,7 @@ function _interopRequireWildcard(obj, nodeInterop) {
   return newObj;
 }
 var FormControl = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, type = _ref.type, size = _ref.size, htmlSize = _ref.htmlSize, id = _ref.id, className = _ref.className, _ref$isValid = _ref.isValid, isValid = _ref$isValid === void 0 ? false : _ref$isValid, _ref$isInvalid = _ref.isInvalid, isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid, plaintext = _ref.plaintext, readOnly = _ref.readOnly, custom = _ref.custom, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'input' : _ref$as, props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "bsCustomPrefix", "type", "size", "htmlSize", "id", "className", "isValid", "isInvalid", "plaintext", "readOnly", "custom", "as"]);
+  var bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, type = _ref.type, size = _ref.size, htmlSize = _ref.htmlSize, id = _ref.id, className = _ref.className, _ref$isValid = _ref.isValid, isValid = _ref$isValid === void 0 ? false : _ref$isValid, _ref$isInvalid = _ref.isInvalid, isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid, plaintext = _ref.plaintext, readOnly = _ref.readOnly, custom = _ref.custom, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'input' : _ref$as, props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   var _useContext = (0, _react.useContext)(_FormContext.default), controlId = _useContext.controlId;
   var _ref2 = custom ? [bsCustomPrefix, 'custom'] : [bsPrefix, 'form-control'], prefix = _ref2[0], defaultPrefix = _ref2[1];
   bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
@@ -36163,6 +36180,8 @@ var _FormContext = _interopRequireDefault(require("./FormContext"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["bsPrefix", "className", "children", "controlId", "as"];
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -36174,7 +36193,7 @@ var FormGroup = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
       controlId = _ref.controlId,
       _ref$as = _ref.as,
       Component = _ref$as === void 0 ? 'div' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "children", "controlId", "as"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-group');
   var context = (0, _react.useMemo)(function () {
     return {
@@ -36206,6 +36225,7 @@ var _warning = _interopRequireDefault(require("warning"));
 var _Col = _interopRequireDefault(require("./Col"));
 var _FormContext = _interopRequireDefault(require("./FormContext"));
 var _ThemeProvider = require("./ThemeProvider");
+var _excluded = ["as", "bsPrefix", "column", "srOnly", "className", "htmlFor"];
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -36250,7 +36270,7 @@ var defaultProps = {
   srOnly: false
 };
 var FormLabel = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var _ref$as = _ref.as, Component = _ref$as === void 0 ? 'label' : _ref$as, bsPrefix = _ref.bsPrefix, column = _ref.column, srOnly = _ref.srOnly, className = _ref.className, htmlFor = _ref.htmlFor, props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["as", "bsPrefix", "column", "srOnly", "className", "htmlFor"]);
+  var _ref$as = _ref.as, Component = _ref$as === void 0 ? 'label' : _ref$as, bsPrefix = _ref.bsPrefix, column = _ref.column, srOnly = _ref.srOnly, className = _ref.className, htmlFor = _ref.htmlFor, props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   var _useContext = (0, _react.useContext)(_FormContext.default), controlId = _useContext.controlId;
   bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-label');
   var columnClass = 'col-form-label';
@@ -36260,6 +36280,7 @@ var FormLabel = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
   htmlFor = htmlFor || controlId;
   if (column) return (
     /*#__PURE__*/_react.default.createElement(_Col.default, (0, _extends2.default)({
+      ref: ref,
       as: "label",
       className: classes,
       htmlFor: htmlFor
@@ -36299,6 +36320,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["bsPrefix", "className", "as"];
 var DEVICE_SIZES = ['xl', 'lg', 'md', 'sm', 'xs'];
 
 var Col = /*#__PURE__*/_react.default.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
@@ -36307,7 +36329,7 @@ function (_ref, ref) {
       className = _ref.className,
       _ref$as = _ref.as,
       Component = _ref$as === void 0 ? 'div' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "as"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'col');
   var spans = [];
   var classes = [];
@@ -36365,6 +36387,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["bsPrefix", "className", "as", "muted"];
+
 var FormText = /*#__PURE__*/_react.default.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
 function (_ref, ref) {
   var bsPrefix = _ref.bsPrefix,
@@ -36372,7 +36396,7 @@ function (_ref, ref) {
       _ref$as = _ref.as,
       Component = _ref$as === void 0 ? 'small' : _ref$as,
       muted = _ref.muted,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "as", "muted"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-text');
   return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
     ref: ref,
@@ -36431,6 +36455,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["className", "bsPrefix", "as"];
+
 var pascalCase = function pascalCase(str) {
   return str[0].toUpperCase() + (0, _camelize.default)(str).slice(1);
 };
@@ -36448,7 +36474,7 @@ function createWithBsPrefix(prefix, _temp) {
         bsPrefix = _ref2.bsPrefix,
         _ref2$as = _ref2.as,
         Tag = _ref2$as === void 0 ? Component || 'div' : _ref2$as,
-        props = (0, _objectWithoutPropertiesLoose2.default)(_ref2, ["className", "bsPrefix", "as"]);
+        props = (0, _objectWithoutPropertiesLoose2.default)(_ref2, _excluded);
     var resolvedPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, prefix);
     return /*#__PURE__*/_react.default.createElement(Tag, (0, _extends2.default)({
       ref: ref,
@@ -36496,6 +36522,7 @@ var _ThemeProvider = require("./ThemeProvider");
 
 var _SafeAnchor = _interopRequireDefault(require("./SafeAnchor"));
 
+var _excluded = ["bsPrefix", "variant", "size", "active", "className", "block", "type", "as"];
 var defaultProps = {
   variant: 'primary',
   active: false,
@@ -36511,7 +36538,7 @@ var Button = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
       block = _ref.block,
       type = _ref.type,
       as = _ref.as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "variant", "size", "active", "className", "block", "type", "as"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'btn');
   var classes = (0, _classnames.default)(className, prefix, active && 'active', variant && prefix + "-" + variant, block && prefix + "-block", size && prefix + "-" + size);
 
@@ -36560,6 +36587,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _createChainedFunction = _interopRequireDefault(require("./createChainedFunction"));
 
+var _excluded = ["as", "disabled", "onKeyDown"];
+
 function isTrivialHref(href) {
   return !href || href.trim() === '#';
 }
@@ -36577,7 +36606,7 @@ var SafeAnchor = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
       Component = _ref$as === void 0 ? 'a' : _ref$as,
       disabled = _ref.disabled,
       onKeyDown = _ref.onKeyDown,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["as", "disabled", "onKeyDown"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
 
   var handleClick = function handleClick(event) {
     var href = props.href,
@@ -36690,6 +36719,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["bsPrefix", "className", "noGutters", "as"];
 var DEVICE_SIZES = ['xl', 'lg', 'md', 'sm', 'xs'];
 var defaultProps = {
   noGutters: false
@@ -36701,7 +36731,7 @@ var Row = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
       noGutters = _ref.noGutters,
       _ref$as = _ref.as,
       Component = _ref$as === void 0 ? 'div' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "noGutters", "as"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   var decoratedBsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'row');
   var sizePrefix = decoratedBsPrefix + "-cols";
   var classes = [];
@@ -36763,6 +36793,8 @@ var _NavItem = _interopRequireDefault(require("./NavItem"));
 
 var _NavLink = _interopRequireDefault(require("./NavLink"));
 
+var _excluded = ["as", "bsPrefix", "variant", "fill", "justify", "navbar", "navbarScroll", "className", "children", "activeKey"];
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -36789,7 +36821,7 @@ var Nav = /*#__PURE__*/_react.default.forwardRef(function (uncontrolledProps, re
       className = _useUncontrolled.className,
       children = _useUncontrolled.children,
       activeKey = _useUncontrolled.activeKey,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_useUncontrolled, ["as", "bsPrefix", "variant", "fill", "justify", "navbar", "navbarScroll", "className", "children", "activeKey"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_useUncontrolled, _excluded);
 
   var bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(initialBsPrefix, 'nav');
   var navbarBsPrefix;
@@ -37373,6 +37405,8 @@ var _SelectableContext = _interopRequireWildcard(require("./SelectableContext"))
 
 var _TabContext = _interopRequireDefault(require("./TabContext"));
 
+var _excluded = ["as", "onSelect", "activeKey", "role", "onKeyDown"];
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -37387,7 +37421,7 @@ var AbstractNav = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
       activeKey = _ref.activeKey,
       role = _ref.role,
       onKeyDown = _ref.onKeyDown,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["as", "onSelect", "activeKey", "role", "onKeyDown"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   // A ref and forceUpdate for refocus, b/c we only want to trigger when needed
   // and don't want to reset the set in the effect
   var forceUpdate = (0, _useForceUpdate.default)();
@@ -37654,6 +37688,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["bsPrefix", "className", "children", "as"];
+
 var NavItem = /*#__PURE__*/_react.default.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
 function (_ref, ref) {
   var bsPrefix = _ref.bsPrefix,
@@ -37661,7 +37697,7 @@ function (_ref, ref) {
       children = _ref.children,
       _ref$as = _ref.as,
       Component = _ref$as === void 0 ? 'div' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "children", "as"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'nav-item');
   return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
     ref: ref,
@@ -37695,6 +37731,7 @@ var _AbstractNavItem = _interopRequireDefault(require("./AbstractNavItem"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["bsPrefix", "disabled", "className", "href", "eventKey", "onSelect", "as"];
 var defaultProps = {
   disabled: false,
   as: _SafeAnchor.default
@@ -37708,7 +37745,7 @@ var NavLink = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
       eventKey = _ref.eventKey,
       onSelect = _ref.onSelect,
       as = _ref.as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "disabled", "className", "href", "eventKey", "onSelect", "as"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'nav-link');
   return /*#__PURE__*/_react.default.createElement(_AbstractNavItem.default, (0, _extends2.default)({}, props, {
     href: href,
@@ -37739,6 +37776,7 @@ var _useEventCallback = _interopRequireDefault(require("@restart/hooks/useEventC
 var _warning = _interopRequireDefault(require("warning"));
 var _NavContext = _interopRequireDefault(require("./NavContext"));
 var _SelectableContext = _interopRequireWildcard(require("./SelectableContext"));
+var _excluded = ["active", "className", "eventKey", "onSelect", "onClick", "as"];
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -37782,7 +37820,7 @@ var defaultProps = {
   disabled: false
 };
 var AbstractNavItem = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var active = _ref.active, className = _ref.className, eventKey = _ref.eventKey, onSelect = _ref.onSelect, onClick = _ref.onClick, Component = _ref.as, props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["active", "className", "eventKey", "onSelect", "onClick", "as"]);
+  var active = _ref.active, className = _ref.className, eventKey = _ref.eventKey, onSelect = _ref.onSelect, onClick = _ref.onClick, Component = _ref.as, props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   var navKey = (0, _SelectableContext.makeEventKey)(eventKey, props.href);
   var parentOnSelect = (0, _react.useContext)(_SelectableContext.default);
   var navContext = (0, _react.useContext)(_NavContext.default);
@@ -37901,6 +37939,8 @@ var _NavbarContext = _interopRequireDefault(require("./NavbarContext"));
 
 var _SelectableContext = _interopRequireDefault(require("./SelectableContext"));
 
+var _excluded = ["bsPrefix", "expand", "variant", "bg", "fixed", "sticky", "className", "children", "as", "expanded", "onToggle", "onSelect", "collapseOnSelect"];
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -37932,7 +37972,7 @@ var Navbar = /*#__PURE__*/_react.default.forwardRef(function (props, ref) {
       _onToggle = _useUncontrolled.onToggle,
       onSelect = _useUncontrolled.onSelect,
       collapseOnSelect = _useUncontrolled.collapseOnSelect,
-      controlledProps = (0, _objectWithoutPropertiesLoose2.default)(_useUncontrolled, ["bsPrefix", "expand", "variant", "bg", "fixed", "sticky", "className", "children", "as", "expanded", "onToggle", "onSelect", "collapseOnSelect"]);
+      controlledProps = (0, _objectWithoutPropertiesLoose2.default)(_useUncontrolled, _excluded);
 
   var bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(initialBsPrefix, 'navbar');
   var handleCollapse = (0, _react.useCallback)(function () {
@@ -38000,11 +38040,13 @@ var _react = _interopRequireDefault(require("react"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["bsPrefix", "className", "as"];
+
 var NavbarBrand = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
   var bsPrefix = _ref.bsPrefix,
       className = _ref.className,
       as = _ref.as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "as"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'navbar-brand');
   var Component = as || (props.href ? 'a' : 'span');
   return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
@@ -38037,10 +38079,12 @@ var _ThemeProvider = require("./ThemeProvider");
 
 var _NavbarContext = _interopRequireDefault(require("./NavbarContext"));
 
+var _excluded = ["children", "bsPrefix"];
+
 var NavbarCollapse = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
   var children = _ref.children,
       bsPrefix = _ref.bsPrefix,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["children", "bsPrefix"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'navbar-collapse');
   return /*#__PURE__*/_react.default.createElement(_NavbarContext.default.Consumer, null, function (context) {
     return /*#__PURE__*/_react.default.createElement(_Collapse.default, (0, _extends2.default)({
@@ -38081,6 +38125,8 @@ var _transitionEndListener = _interopRequireDefault(require("./transitionEndList
 var _createChainedFunction = _interopRequireDefault(require("./createChainedFunction"));
 
 var _triggerBrowserReflow = _interopRequireDefault(require("./triggerBrowserReflow"));
+
+var _excluded = ["onEnter", "onEntering", "onEntered", "onExit", "onExiting", "className", "children", "dimension", "getDimensionValue"];
 
 var _collapseStyles;
 
@@ -38124,7 +38170,7 @@ var Collapse = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
       dimension = _ref$dimension === void 0 ? 'height' : _ref$dimension,
       _ref$getDimensionValu = _ref.getDimensionValue,
       getDimensionValue = _ref$getDimensionValu === void 0 ? getDefaultDimensionValue : _ref$getDimensionValu,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["onEnter", "onEntering", "onEntered", "onExit", "onExiting", "className", "children", "dimension", "getDimensionValue"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
 
   /* Compute dimension */
   var computedDimension = typeof dimension === 'function' ? dimension() : dimension;
@@ -38693,7 +38739,10 @@ Transition.propTypes = "development" !== "production" ? {
   *     [test/CSSTransition-test.js](https://github.com/reactjs/react-transition-group/blob/13435f897b3ab71f6e19d724f145596f5910581c/test/CSSTransition-test.js#L362-L437)).
   */
   nodeRef: _propTypes.default.shape({
-    current: typeof Element === 'undefined' ? _propTypes.default.any : _propTypes.default.instanceOf(Element)
+    current: typeof Element === 'undefined' ? _propTypes.default.any : function (propValue, key, componentName, location, propFullName, secret) {
+      var value = propValue[key];
+      return _propTypes.default.instanceOf(value && ('ownerDocument' in value) ? value.ownerDocument.defaultView.Element : Element)(propValue, key, componentName, location, propFullName, secret);
+    }
   }),
   /**
   * A `function` child can be used instead of a React element. This function is
@@ -39199,6 +39248,8 @@ var _ThemeProvider = require("./ThemeProvider");
 
 var _NavbarContext = _interopRequireDefault(require("./NavbarContext"));
 
+var _excluded = ["bsPrefix", "className", "children", "label", "as", "onClick"];
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -39215,7 +39266,7 @@ var NavbarToggle = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
       _ref$as = _ref.as,
       Component = _ref$as === void 0 ? 'button' : _ref$as,
       onClick = _ref.onClick,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "children", "label", "as", "onClick"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'navbar-toggler');
 
   var _ref2 = (0, _react.useContext)(_NavbarContext.default) || {},
@@ -39424,6 +39475,10 @@ try {
   var _reactBootstrapFormDefault = _parcelHelpers.interopDefault(_reactBootstrapForm);
   var _reactBootstrapButton = require('react-bootstrap/Button');
   var _reactBootstrapButtonDefault = _parcelHelpers.interopDefault(_reactBootstrapButton);
+  var _reactBootstrapNavbar = require('react-bootstrap/Navbar');
+  var _reactBootstrapNavbarDefault = _parcelHelpers.interopDefault(_reactBootstrapNavbar);
+  var _reactBootstrapNav = require('react-bootstrap/Nav');
+  var _reactBootstrapNavDefault = _parcelHelpers.interopDefault(_reactBootstrapNav);
   var _reactRouterDom = require("react-router-dom");
   var _reactBootstrapEsmContainer = require('react-bootstrap/esm/Container');
   var _reactBootstrapEsmContainerDefault = _parcelHelpers.interopDefault(_reactBootstrapEsmContainer);
@@ -39478,14 +39533,65 @@ try {
       return isValid;
     };
     return (
-      /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapEsmContainerDefault.default, {
+      /*#__PURE__*/_reactDefault.default.createElement("div", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapNavDefault.default, {
+        as: "ul",
+        style: {
+          maxHeight: '60px',
+          fontSize: '25px',
+          justifyContent: 'flex-end',
+          backgroundColor: 'rgba(194, 163, 255, 0.8)',
+          minWidth: '100%'
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 74,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapEsmContainerDefault.default, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 75,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
+        to: "/",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76,
+          columnNumber: 17
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapNavbarDefault.default.Brand, {
+        style: {
+          position: 'absolute',
+          left: '10px',
+          fontSize: '44px',
+          color: 'white',
+          fontWeight: '800'
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76,
+          columnNumber: 30
+        }
+      }, "GAMING MOVIES")))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapEsmContainerDefault.default, {
         style: {
           display: 'flex'
         },
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71,
+          lineNumber: 79,
           columnNumber: 7
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default, {
@@ -39502,7 +39608,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72,
+          lineNumber: 80,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
@@ -39510,7 +39616,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73,
+          lineNumber: 81,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
@@ -39522,7 +39628,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74,
+          lineNumber: 82,
           columnNumber: 11
         }
       }, "Username:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -39537,7 +39643,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75,
+          lineNumber: 83,
           columnNumber: 11
         }
       })), Object.keys(nameError).map(key => {
@@ -39551,7 +39657,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 80,
+              lineNumber: 88,
               columnNumber: 19
             }
           }, nameError[key])
@@ -39561,7 +39667,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86,
+          lineNumber: 94,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
@@ -39573,7 +39679,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87,
+          lineNumber: 95,
           columnNumber: 11
         }
       }, "Password:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -39588,7 +39694,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88,
+          lineNumber: 96,
           columnNumber: 11
         }
       })), Object.keys(passwordError).map(key => {
@@ -39602,7 +39708,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 93,
+              lineNumber: 101,
               columnNumber: 19
             }
           }, passwordError[key])
@@ -39612,7 +39718,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99,
+          lineNumber: 107,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
@@ -39624,7 +39730,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100,
+          lineNumber: 108,
           columnNumber: 11
         }
       }, "Email:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -39639,7 +39745,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 101,
+          lineNumber: 109,
           columnNumber: 11
         }
       })), Object.keys(emailError).map(key => {
@@ -39653,7 +39759,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 106,
+              lineNumber: 114,
               columnNumber: 19
             }
           }, emailError[key])
@@ -39663,7 +39769,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 112,
+          lineNumber: 120,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
@@ -39675,7 +39781,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 113,
+          lineNumber: 121,
           columnNumber: 11
         }
       }, "Birthday:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -39691,7 +39797,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114,
+          lineNumber: 122,
           columnNumber: 11
         }
       })), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
@@ -39699,7 +39805,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116,
+          lineNumber: 124,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -39715,7 +39821,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 117,
+          lineNumber: 125,
           columnNumber: 9
         }
       }, "Back")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -39732,10 +39838,10 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121,
+          lineNumber: 129,
           columnNumber: 9
         }
-      }, "Register")))
+      }, "Register"))))
     );
   }
   _s(RegistrationView, "bWaijP+OZoXEif/FC66cW6Iv29A=");
@@ -39756,7 +39862,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","axios":"7rA65","prop-types":"4dfy5","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","react-bootstrap/esm/Container":"2b3OU","@parcel/transformer-js/lib/esmodule-helpers.js":"3np1v","../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2UkCJ"}],"2b3OU":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","prop-types":"4dfy5","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","react-bootstrap/esm/Container":"2b3OU","@parcel/transformer-js/lib/esmodule-helpers.js":"3np1v","../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2UkCJ","react-bootstrap/Navbar":"3qLFd","react-bootstrap/Nav":"3T3v1"}],"2b3OU":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
 var _babelRuntimeHelpersEsmExtends = require("@babel/runtime/helpers/esm/extends");
@@ -39768,11 +39874,12 @@ var _classnamesDefault = _parcelHelpers.interopDefault(_classnames);
 var _react = require('react');
 var _reactDefault = _parcelHelpers.interopDefault(_react);
 var _ThemeProvider = require('./ThemeProvider');
+var _excluded = ["bsPrefix", "fluid", "as", "className"];
 var defaultProps = {
   fluid: false
 };
 var Container = /*#__PURE__*/_reactDefault.default.forwardRef(function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix, fluid = _ref.fluid, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'div' : _ref$as, className = _ref.className, props = _babelRuntimeHelpersEsmObjectWithoutPropertiesLooseDefault.default(_ref, ["bsPrefix", "fluid", "as", "className"]);
+  var bsPrefix = _ref.bsPrefix, fluid = _ref.fluid, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'div' : _ref$as, className = _ref.className, props = _babelRuntimeHelpersEsmObjectWithoutPropertiesLooseDefault.default(_ref, _excluded);
   var prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'container');
   var suffix = typeof fluid === 'string' ? "-" + fluid : '-fluid';
   return (
@@ -40376,8 +40483,7 @@ try {
         password: "",
         email: "",
         birthday: "",
-        favoriteMovies: [],
-        movies: ""
+        favoriteMovies: []
       };
     }
     componentDidMount() {
@@ -40438,21 +40544,21 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 93,
+            lineNumber: 92,
             columnNumber: 11
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 94,
+            lineNumber: 93,
             columnNumber: 11
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 95,
+            lineNumber: 94,
             columnNumber: 11
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -40465,7 +40571,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 96,
+            lineNumber: 95,
             columnNumber: 11
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -40476,14 +40582,14 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 97,
+            lineNumber: 96,
             columnNumber: 15
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 98,
+            lineNumber: 97,
             columnNumber: 15
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -40491,7 +40597,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 99,
+            lineNumber: 98,
             columnNumber: 21
           }
         }, "Username:  "), /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -40502,14 +40608,14 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 100,
+            lineNumber: 99,
             columnNumber: 21
           }
         }, userData)), /*#__PURE__*/_reactDefault.default.createElement("div", {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 102,
+            lineNumber: 101,
             columnNumber: 19
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -40517,7 +40623,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 103,
+            lineNumber: 102,
             columnNumber: 21
           }
         }, "Email: "), /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -40528,14 +40634,14 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 104,
+            lineNumber: 103,
             columnNumber: 21
           }
         }, userEmail)), /*#__PURE__*/_reactDefault.default.createElement("div", {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 106,
+            lineNumber: 105,
             columnNumber: 19
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -40543,7 +40649,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 107,
+            lineNumber: 106,
             columnNumber: 21
           }
         }, "Birthday: "), /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -40554,7 +40660,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 108,
+            lineNumber: 107,
             columnNumber: 21
           }
         }, _dateformatDefault.default(userBirthday, "mmmm dS, yyyy"))), /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -40564,7 +40670,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 110,
+            lineNumber: 109,
             columnNumber: 19
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
@@ -40572,7 +40678,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 111,
+            lineNumber: 110,
             columnNumber: 19
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -40587,7 +40693,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 112,
+            lineNumber: 111,
             columnNumber: 17
           }
         }, "Back")), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
@@ -40595,7 +40701,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 116,
+            lineNumber: 115,
             columnNumber: 17
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -40611,7 +40717,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 117,
+            lineNumber: 116,
             columnNumber: 17
           }
         }, "Update Profile")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -40629,7 +40735,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 121,
+            lineNumber: 120,
             columnNumber: 17
           }
         }, "Delete Profile"))), /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -40637,7 +40743,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 124,
+            lineNumber: 123,
             columnNumber: 15
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("h2", {
@@ -40649,7 +40755,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 125,
+            lineNumber: 124,
             columnNumber: 17
           }
         }, "Favorite Movies"), favoriteMovieList.map(movie => {
@@ -40662,16 +40768,16 @@ try {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 129,
+                lineNumber: 128,
                 columnNumber: 15
               }
             }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-              md: 3,
+              md: 2.5,
               key: movie._id,
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 130,
+                lineNumber: 129,
                 columnNumber: 15
               }
             }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default, {
@@ -40682,7 +40788,7 @@ try {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 131,
+                lineNumber: 130,
                 columnNumber: 17
               }
             }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Img, {
@@ -40694,7 +40800,7 @@ try {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 132,
+                lineNumber: 131,
                 columnNumber: 19
               }
             }), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Body, {
@@ -40704,7 +40810,7 @@ try {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 133,
+                lineNumber: 132,
                 columnNumber: 19
               }
             }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
@@ -40712,7 +40818,7 @@ try {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 134,
+                lineNumber: 133,
                 columnNumber: 21
               }
             }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Title, {
@@ -40724,14 +40830,14 @@ try {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 135,
+                lineNumber: 134,
                 columnNumber: 23
               }
             }, movie.Title)))), /*#__PURE__*/_reactDefault.default.createElement("div", {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 139,
+                lineNumber: 138,
                 columnNumber: 17
               }
             }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -40747,7 +40853,7 @@ try {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 140,
+                lineNumber: 139,
                 columnNumber: 17
               }
             }, "Remove"))))
@@ -41104,6 +41210,8 @@ var _CardContext = _interopRequireDefault(require("./CardContext"));
 
 var _CardImg = _interopRequireDefault(require("./CardImg"));
 
+var _excluded = ["bsPrefix", "className", "bg", "text", "border", "body", "children", "as"];
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -41140,7 +41248,7 @@ var Card = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
       children = _ref.children,
       _ref$as = _ref.as,
       Component = _ref$as === void 0 ? 'div' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "bg", "text", "border", "body", "children", "as"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'card');
   var cardContext = (0, _react.useMemo)(function () {
     return {
@@ -41216,6 +41324,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _ThemeProvider = require("./ThemeProvider");
 
+var _excluded = ["bsPrefix", "className", "variant", "as"];
 var defaultProps = {
   variant: null
 };
@@ -41227,7 +41336,7 @@ function (_ref, ref) {
       variant = _ref.variant,
       _ref$as = _ref.as,
       Component = _ref$as === void 0 ? 'img' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "variant", "as"]);
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
   var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'card-img');
   return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
     ref: ref,
@@ -41591,12 +41700,6 @@ try {
   var _reactRouterDom = require("react-router-dom");
   var _jsxFileName = "/Users/thomashubner/careerfoundry/GamingMoviesClient/src/components/navbar-view/navbar-view.jsx";
   class NavbarView extends _reactDefault.default.Component {
-    constructor() {
-      super();
-      this.state = {
-        user: ""
-      };
-    }
     onLoggedOut() {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
@@ -41609,12 +41712,13 @@ try {
       window.open("/", "_self");
     }
     render() {
+      const {user} = this.props;
       return (
         /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapContainerDefault.default, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35,
+            lineNumber: 29,
             columnNumber: 12
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
@@ -41622,7 +41726,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36,
+            lineNumber: 30,
             columnNumber: 9
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapNavDefault.default, {
@@ -41637,14 +41741,14 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37,
+            lineNumber: 31,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapContainerDefault.default, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38,
+            lineNumber: 32,
             columnNumber: 15
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
@@ -41652,7 +41756,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39,
+            lineNumber: 33,
             columnNumber: 17
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapNavbarDefault.default.Brand, {
@@ -41666,14 +41770,14 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39,
+            lineNumber: 33,
             columnNumber: 30
           }
         }, "GAMING MOVIES"))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapNavDefault.default.Item, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41,
+            lineNumber: 35,
             columnNumber: 17
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapNavDefault.default.Link, {
@@ -41687,14 +41791,14 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 42,
+            lineNumber: 36,
             columnNumber: 21
           }
         }, "Profile")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapNavDefault.default.Item, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 44,
+            lineNumber: 38,
             columnNumber: 17
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapNavDefault.default.Link, {
@@ -41710,7 +41814,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 45,
+            lineNumber: 39,
             columnNumber: 21
           }
         }, "Log Out")))))
@@ -42011,6 +42115,6 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-router-dom":"1PMSK","@parcel/transformer-js/lib/esmodule-helpers.js":"3np1v","../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2UkCJ","../movie-card/movie-card.scss":"43n4t"}],"43n4t":[function() {},{}],"5iJih":[function() {},{}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire43f6")
+},{"react":"3b2NM","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","../movie-card/movie-card.scss":"43n4t","react-router-dom":"1PMSK","@parcel/transformer-js/lib/esmodule-helpers.js":"3np1v","../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"2UkCJ"}],"43n4t":[function() {},{}],"5iJih":[function() {},{}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire43f6")
 
 //# sourceMappingURL=index.02675e63.js.map
