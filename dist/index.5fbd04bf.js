@@ -34992,7 +34992,7 @@ class NavbarView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_navDefault.default.Link, {
-            href: `/users/${user}`,
+            href: `https://gamingmovies.netlify.app/users/${user}`,
             style: {
                 color: 'black',
                 backgroundColor: 'white',
