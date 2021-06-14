@@ -94,7 +94,6 @@ export class ProfileView extends React.Component {
           <Col>
           <div className="profile-view" style={{ fontSize: '28px', textAlign: 'center', padding: '20px'}}>
               <div className="profile-info" style={{padding: '30px'}}>
-                  <span><h3>Username: {userData}</h3></span>
                   <div style={{paddingTop: '20px'}}>
                   <Link to={`/`}>
                 <Button style={{ width: '100px' ,fontSize: '20px' ,backgroundColor: 'black', border: 'none', textDecoration: 'none', color: 'white' }} >
