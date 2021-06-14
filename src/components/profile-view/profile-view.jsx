@@ -89,22 +89,11 @@ export class ProfileView extends React.Component {
       });
 
         return (
+          <Container>
           <Row>
           <Col>
           <div className="profile-view" style={{ fontSize: '28px', textAlign: 'center', padding: '20px'}}>
               <div className="profile-info" style={{padding: '30px'}}>
-              <div>
-                    <span className="label">Username:  </span>
-                    <span className="value" style={{ fontSize: '26px'}}>{userData}</span>
-                  </div>
-                  <div>
-                    <span className="label">Email: </span>
-                    <span className="value" style={{ fontSize: '26px'}}>{userEmail}</span>
-                  </div>
-                  <div>
-                    <span className="label">Birthday: </span>
-                    <span className="value" style={{ fontSize: '26px'}}>{dateFormat(userBirthday, "mmmm dS, yyyy")}</span>
-                  </div>
                   <div style={{paddingTop: '20px'}}>
                   <Link to={`/`}>
                 <Button style={{ width: '100px' ,fontSize: '20px' ,backgroundColor: 'black', border: 'none', textDecoration: 'none', color: 'white' }} >
@@ -147,6 +136,7 @@ export class ProfileView extends React.Component {
                 </div>
           </Col>
           </Row>
+          </Container>
         );
     }
 }
