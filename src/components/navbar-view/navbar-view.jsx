@@ -36,7 +36,10 @@ export class NavbarView extends React.Component{
                 <Link to="/"><Navbar.Brand style={{ position: 'absolute', left: '10px' , fontSize: '38px', color: 'white', fontWeight: '800'}}>GAMING MOVIES</Navbar.Brand></Link>
                 </Container>
                 <Nav.Item >
-                    <Nav.Link style={{ color: 'black', backgroundColor:'white', width: 'auto', textAlign: 'center' }} onClick={() => { this.onProfile() }}>Profile</Nav.Link>
+                  <Container><Link to="/users/${user}">
+                  <Nav.Link style={{ color: 'black', backgroundColor:'white', width: 'auto', textAlign: 'center' }} onClick={() => { this.onProfile() }}>Profile</Nav.Link>
+                    </Link></Container>
+                    
                 </Nav.Item>
                 <Nav.Item >
                     <Nav.Link style={{ color: 'white', backgroundColor:'black', width: 'auto', textAlign: 'center' }} onClick={() => { this.onLoggedOut() }}>Log Out</Nav.Link>
@@ -46,3 +49,4 @@ export class NavbarView extends React.Component{
   </Container>
 
     )}}
+export default NavbarView;
