@@ -84,7 +84,7 @@ export class ProfileView extends React.Component {
     
     render() {
       const { userData, movies } = this.props;
-      const { name } = this.state;
+      const { name, email, birthday } = this.state;
       const favoriteMovieList = movies.filter((movie) => {
         return this.state.favoriteMovies.includes(movie._id);
       });
@@ -96,6 +96,8 @@ export class ProfileView extends React.Component {
           <div className="profile-view" style={{ fontSize: '28px', textAlign: 'center', padding: '20px'}}>
               <div className="profile-info" style={{padding: '30px'}}>
                 <h3>Username: {name}</h3>
+                <h3>Email: {email}</h3>
+                <h3>Birtday: {dateFormat(birthday, "mmmm dS, yyyy")}</h3>
                   <div style={{paddingTop: '20px'}}>
                   <Link to={`/`}>
                 <Button style={{ width: '100px' ,fontSize: '20px' ,backgroundColor: 'black', border: 'none', textDecoration: 'none', color: 'white' }} >

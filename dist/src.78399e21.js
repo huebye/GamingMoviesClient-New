@@ -43671,7 +43671,10 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           userData = _this$props.userData,
           movies = _this$props.movies;
-      var name = this.state.name;
+      var _this$state = this.state,
+          name = _this$state.name,
+          email = _this$state.email,
+          birthday = _this$state.birthday;
       var favoriteMovieList = movies.filter(function (movie) {
         return _this4.state.favoriteMovies.includes(movie._id);
       });
@@ -43687,7 +43690,7 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
         style: {
           padding: '30px'
         }
-      }, /*#__PURE__*/_react.default.createElement("h3", null, "Username: ", name), /*#__PURE__*/_react.default.createElement("div", {
+      }, /*#__PURE__*/_react.default.createElement("h3", null, "Username: ", name), /*#__PURE__*/_react.default.createElement("h3", null, "Email: ", email), /*#__PURE__*/_react.default.createElement("h3", null, "Birtday: ", (0, _dateformat.default)(birthday, "mmmm dS, yyyy")), /*#__PURE__*/_react.default.createElement("div", {
         style: {
           paddingTop: '20px'
         }
