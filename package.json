@@ -1,0 +1,38 @@
+{
+  "name": "gamingmoviesclient",
+  "version": "1.0.0",
+  "description": "cleintside of app gamingMovies",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huebye/GamingMoviesClient.git"
+  },
+  "author": "Thomas Hübner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huebye/GamingMoviesClient/issues"
+  },
+  "homepage": "https://github.com/huebye/GamingMoviesClient#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dateformat": "^4.5.1",
+    "mdb-react-ui-kit": "*",
+    "parcel": "^1.12.4",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.0",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.1.0",
+    "redux-devtools-extension": "^2.13.9"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "netlify-cli": "^2.12.0"
+  }
+}

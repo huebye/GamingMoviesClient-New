@@ -1,0 +1,27 @@
+.director-view {
+    background: 
+    rgba(255, 255, 255, 0.16);
+    text-align: center;
+    font-size: 26px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 4px;
+    width: 800px;
+    position: relative;
+    top: 100px;
+}
+
+.value1 {
+    display: inline-block;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(255, 240, 101, 0.8);
+    padding: 5px;
+    width: auto;
+    border-radius: 4px;
+}
+
+.value2 {
+    font-size: 25px;
+}
