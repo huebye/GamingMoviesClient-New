@@ -24977,7 +24977,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
-            path: "https://gamingmovies.netlify.app/users/:name",
+            path: "/users/:name",
             render: ({ history  })=>{
                 if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
@@ -34992,7 +34992,7 @@ class NavbarView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_navDefault.default.Link, {
-            href: `https://gamingmovies.netlify.app/users/${user}`,
+            href: `/users/${user}`,
             style: {
                 color: 'black',
                 backgroundColor: 'white',
@@ -35028,7 +35028,6 @@ class NavbarView extends _reactDefault.default.Component {
         }, "Log Out"))))));
     }
 }
-exports.default = NavbarView;
 
   helpers.postlude(module);
 } finally {

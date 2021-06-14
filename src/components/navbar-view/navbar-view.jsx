@@ -33,7 +33,7 @@ export class NavbarView extends React.Component{
                 <Link to="/"><Navbar.Brand style={{ position: 'absolute', left: '10px' , fontSize: '38px', color: 'white', fontWeight: '800'}}>GAMING MOVIES</Navbar.Brand></Link>
                 </Container>
                 <Nav.Item >
-                    <Nav.Link href={`https://gamingmovies.netlify.app/users/${user}`} style={{ color: 'black', backgroundColor:'white', width: 'auto', textAlign: 'center' }} >Profile</Nav.Link>
+                    <Nav.Link href={`/users/${user}`} style={{ color: 'black', backgroundColor:'white', width: 'auto', textAlign: 'center' }} >Profile</Nav.Link>
                 </Nav.Item>
                 <Nav.Item >
                     <Nav.Link style={{ color: 'white', backgroundColor:'black', width: 'auto', textAlign: 'center' }} onClick={() => { this.onLoggedOut() }}>Log Out</Nav.Link>
@@ -43,4 +43,3 @@ export class NavbarView extends React.Component{
   </Container>
 
     )}}
-export default NavbarView;
