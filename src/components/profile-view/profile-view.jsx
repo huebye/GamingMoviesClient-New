@@ -89,13 +89,12 @@ export class ProfileView extends React.Component {
       });
 
         return (
-          <Container>
           <Row>
           <Col>
           <div className="profile-view" style={{ fontSize: '28px', textAlign: 'center', padding: '20px'}}>
               <div className="profile-info" style={{padding: '30px'}}>
               <div>
-                    <h3>Username:</h3>
+                    <span className="label">Username:  </span>
                     <span className="value" style={{ fontSize: '26px'}}>{userData}</span>
                   </div>
                   <div>
@@ -148,7 +147,6 @@ export class ProfileView extends React.Component {
                 </div>
           </Col>
           </Row>
-          </Container>
         );
     }
 }
