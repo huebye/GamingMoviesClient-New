@@ -67,7 +67,6 @@ export class MovieView extends React.Component {
                     <Button style={{ width: '90px' ,marginRight: '10px' ,fontSize:'20px' ,backgroundColor: 'rgba(255, 240, 101, 0.8)', border: 'none', color: '#193740', textDecoration: 'none'  }} variant="link">Director</Button>
                     </Link>
                     </div>
-                    
                 </div>   
             </div>
             </Col>
