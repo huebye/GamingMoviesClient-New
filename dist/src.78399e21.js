@@ -43670,9 +43670,8 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
 
       var _this$props = this.props,
           userData = _this$props.userData,
-          userEmail = _this$props.userEmail,
-          userBirthday = _this$props.userBirthday,
           movies = _this$props.movies;
+      var name = this.state.name;
       var favoriteMovieList = movies.filter(function (movie) {
         return _this4.state.favoriteMovies.includes(movie._id);
       });
@@ -43688,26 +43687,7 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
         style: {
           padding: '30px'
         }
-      }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Username:"), /*#__PURE__*/_react.default.createElement("span", {
-        className: "value",
-        style: {
-          fontSize: '26px'
-        }
-      }, userData)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", {
-        className: "label"
-      }, "Email: "), /*#__PURE__*/_react.default.createElement("span", {
-        className: "value",
-        style: {
-          fontSize: '26px'
-        }
-      }, userEmail)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", {
-        className: "label"
-      }, "Birthday: "), /*#__PURE__*/_react.default.createElement("span", {
-        className: "value",
-        style: {
-          fontSize: '26px'
-        }
-      }, (0, _dateformat.default)(userBirthday, "mmmm dS, yyyy"))), /*#__PURE__*/_react.default.createElement("div", {
+      }, /*#__PURE__*/_react.default.createElement("h3", null, "Username: ", name), /*#__PURE__*/_react.default.createElement("div", {
         style: {
           paddingTop: '20px'
         }
@@ -44824,7 +44804,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49963" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56477" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

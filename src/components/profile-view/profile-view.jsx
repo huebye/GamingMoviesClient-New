@@ -83,7 +83,8 @@ export class ProfileView extends React.Component {
   
     
     render() {
-      const { userData, userEmail, userBirthday, movies } = this.props;
+      const { userData, movies } = this.props;
+      const { name } = this.state;
       const favoriteMovieList = movies.filter((movie) => {
         return this.state.favoriteMovies.includes(movie._id);
       });
@@ -94,7 +95,7 @@ export class ProfileView extends React.Component {
           <Col>
           <div className="profile-view" style={{ fontSize: '28px', textAlign: 'center', padding: '20px'}}>
               <div className="profile-info" style={{padding: '30px'}}>
-                <h3>Username: {userData}</h3>
+                <h3>Username: {name}</h3>
                   <div style={{paddingTop: '20px'}}>
                   <Link to={`/`}>
                 <Button style={{ width: '100px' ,fontSize: '20px' ,backgroundColor: 'black', border: 'none', textDecoration: 'none', color: 'white' }} >
