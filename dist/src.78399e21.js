@@ -44292,7 +44292,7 @@ var MovieCard = /*#__PURE__*/function (_React$Component) {
         }
       }, /*#__PURE__*/_react.default.createElement(_Card.default.Img, {
         variant: "top",
-        src: "https://picsum.photos/200/300",
+        src: movie.ImagePath,
         style: {
           height: '360px'
         }
@@ -44806,7 +44806,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56477" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64589" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

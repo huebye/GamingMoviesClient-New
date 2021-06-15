@@ -17,7 +17,7 @@ export class MovieCard extends React.Component {
         
         <Col >
           <Card style={{ width: '340px', margin: '10px', border: 'none', minHeight: '500px', backgroundColor: 'rgba(255, 255, 255, 0.2)', boxShadow: '5px -5px 10px rgba(25, 55, 64, 0.3)'}}>
-            <Card.Img variant="top" src="https://picsum.photos/200/300" style={{ height: '360px'}}/>
+            <Card.Img variant="top" src={movie.ImagePath} style={{ height: '360px'}}/>
              <Card.Body >
               <Card.Title style={{ fontSize: '24px', color: '#193740' }}>{movie.Title}</Card.Title>
               <Link to={`/movies/${movie._id}`}>
