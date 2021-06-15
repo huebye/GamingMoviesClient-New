@@ -43060,6 +43060,7 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
       }).then(function (response) {
         console.log(response); // window.open("/", "_self");
 
+        var user = localStorage.getItem('user');
         window.open("/users/".concat(user), "_self");
         alert("Added to favorites!");
       });
