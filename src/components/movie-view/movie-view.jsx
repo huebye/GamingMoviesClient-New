@@ -31,7 +31,7 @@ export class MovieView extends React.Component {
           .then((response) => {
             console.log(response);
             // window.open("/", "_self");
-            window.open("/users/${users}", "_self");
+            window.open(`/users/${user}`, "_self");
             alert("Added to favorites!");
           });
       }
