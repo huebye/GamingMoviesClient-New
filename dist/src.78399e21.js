@@ -43748,11 +43748,12 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/_react.default.createElement(_Card.default, {
           className: "profilecard",
           style: {
-            border: 'none'
+            border: 'none',
+            width: '150px'
           }
         }, /*#__PURE__*/_react.default.createElement(_Card.default.Img, {
           variant: "top",
-          src: "https://picsum.photos/200/300",
+          src: movie.ImagePath,
           style: {
             height: '160px'
           }
@@ -43765,7 +43766,7 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/_react.default.createElement(_Card.default.Title, {
           style: {
             marginTop: '10px',
-            fontSize: '24px',
+            fontSize: '20px',
             color: '#193740'
           }
         }, movie.Title)))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Button.default, {

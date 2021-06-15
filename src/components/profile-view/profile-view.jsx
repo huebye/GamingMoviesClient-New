@@ -119,11 +119,11 @@ export class ProfileView extends React.Component {
             return (
               <Row  style={{ margin: '0 auto', justifyContent: 'center'}}>
               <Col md={2.5} key={movie._id}>
-                <Card className="profilecard" style={{ border: 'none'}}>
-                  <Card.Img variant="top" src="https://picsum.photos/200/300" style={{ height: '160px'}} />
+                <Card className="profilecard" style={{ border: 'none', width: '150px'}}>
+                  <Card.Img variant="top" src={movie.ImagePath} style={{ height: '160px'}} />
                   <Card.Body style={{backgroundColor: 'rgba(255, 255, 255, 0.6)'}}>
                     <Link to={`/movies/${movie._id}`}>
-                      <Card.Title style={{ marginTop: '10px', fontSize: '24px', color: '#193740' }}>{movie.Title}</Card.Title>
+                      <Card.Title style={{ marginTop: '10px', fontSize: '20px', color: '#193740' }}>{movie.Title}</Card.Title>
                     </Link>
                   </Card.Body>
                 </Card>
