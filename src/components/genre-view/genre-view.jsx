@@ -8,7 +8,7 @@ export class GenreView extends React.Component {
         const { genre, onBackClick } = this.props;
 
         return (
-            <div className="director-view" style={{ fontSize: '28px'}}>
+            <div className="genre-view">
                   <div>
                     <span className="label"></span>
                     <span className="value3" style={{ fontSize: '36px'}}>{genre.Name}</span>
@@ -17,7 +17,7 @@ export class GenreView extends React.Component {
                     <span className="label"></span>
                     <span className="value4">{genre.Description}</span>
                   </div>
-                    <Button onClick={onBackClick} style={{ width: '90px' ,marginRight: '10px' ,fontSize:'20px' ,backgroundColor: 'black', border: 'none', color: 'white', textDecoration: 'none'  }} variant="link">Back</Button>
+                    <Button className="btn_back" onClick={onBackClick} variant="link">Back</Button>
                 </div>
         );
     }

@@ -10,7 +10,7 @@ export class DirectorView extends React.Component {
         const { director, onBackClick } = this.props;
 
         return (
-            <div className="director-view" style={{ fontSize: '28px'}}>
+            <div className="director-view">
                   <div>
                     <span className="label"></span>
                     <span className="value1" style={{ fontSize: '36px'}}>{director.Name}</span>
@@ -19,7 +19,7 @@ export class DirectorView extends React.Component {
                     <span className="label"></span>
                     <span className="value2">{director.Bio}</span>
                   </div>
-                    <Button onClick={onBackClick} style={{ width: '90px' ,marginRight: '10px' ,fontSize:'20px' ,backgroundColor: 'black', border: 'none', color: 'white', textDecoration: 'none'  }} variant="link">Back</Button>
+                    <Button className="btn_back" onClick={onBackClick} variant="link">Back</Button>
                 </div>
         );
     }

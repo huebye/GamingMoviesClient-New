@@ -1,3 +1,38 @@
-.btn:hover {
-    background-color: white;
+.card {
+    width: 340px;
+    margin: 10px;
+    border: none;
+    min-height: 500px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 5px -5px 10px rgba(25, 55, 64, 0.3) ;
+    transition-duration: 1s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 6px -6px 15px rgba(25, 55, 64, 0.25)
+}
+
+.cardimg {
+    height: 360px;
+}
+
+.cardtitle {
+    font-size: 24px;
+    color: #193740;
+}
+
+.btn_details {
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    top: 448px;
+    left: 225px;
+    background-color: rgba(194, 163, 255, 1);
+    border: none;
+}
+
+.btn_details:hover {
+    text-decoration: none;
+    color: black;
 }

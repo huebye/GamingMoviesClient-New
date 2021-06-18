@@ -43,11 +43,11 @@ export class MovieView extends React.Component {
                 <Col>
                 
             <div className="movie-view">
-                <div className="movie-title" style={{ fontSize: '36px', textTransform: 'uppercase'}}>
+                <div className="movie-title">
                     <span className="label"></span>
                     <span className="value">{movie.Title}</span>
                     <span><Button
-                    style={{ marginBottom: '8px', backgroundColor: 'rgba(194, 163, 255, 0)', border: 'none', color: 'red', textDecoration: 'none' }}
+                    className="btn_heart"
                     onClick={() => this.addFavorite(movie)}
                   >
                     ❤️ 
@@ -57,13 +57,13 @@ export class MovieView extends React.Component {
                     <span className="label"></span>
                     <span className="value">{movie.Description}</span>
                     <br />
-                    <div className="btn_zone" style={{ marginTop: '20px'}}>
-                    <Button onClick={onBackClick} style={{ width: '90px' ,marginRight: '10px' ,fontSize:'20px' ,backgroundColor: 'black', border: 'none', color: 'white', textDecoration: 'none'  }} variant="link">Back</Button>
+                    <div className="btn_zone">
+                    <Button className="btn_back" onClick={onBackClick} variant="link">Back</Button>
                     <Link to={`/genres/${movie.Genre.Name}`}>
-                    <Button style={{width: '90px' , marginRight: '10px' ,fontSize:'20px' ,backgroundColor: '#65ACFF', border: 'none', color: '#193740', textDecoration: 'none' }} variant="link">Genre</Button>
+                    <Button className="btn_genre" variant="link">Genre</Button>
                     </Link>
                     <Link to={`/directors/${movie.Director.Name}`}>
-                    <Button style={{ width: '90px' ,marginRight: '10px' ,fontSize:'20px' ,backgroundColor: 'rgba(255, 240, 101, 0.8)', border: 'none', color: '#193740', textDecoration: 'none'  }} variant="link">Director</Button>
+                    <Button className="btn_director" variant="link">Director</Button>
                     </Link>
                     </div>
                     

@@ -13,20 +13,18 @@ export class MovieCard extends React.Component {
       const { movie } = this.props;
 
     return ( 
-      <Row className="main-view justify-content-md-center">
+  
         
-        <Col >
-          <Card style={{ width: '340px', margin: '10px', border: 'none', minHeight: '500px', backgroundColor: 'rgba(255, 255, 255, 0.2)', boxShadow: '5px -5px 10px rgba(25, 55, 64, 0.3)'}}>
-            <Card.Img variant="top" src={movie.ImagePath} style={{ height: '360px'}}/>
+          <Card  className="card">
+            <Card.Img className="cardimg" variant="top" src={movie.ImagePath}/>
              <Card.Body >
-              <Card.Title style={{ fontSize: '24px', color: '#193740' }}>{movie.Title}</Card.Title>
+              <Card.Title className="cardtitle">{movie.Title}</Card.Title>
               <Link to={`/movies/${movie._id}`}>
-               <Button style={{ textDecoration: 'none' ,color: 'white' ,fontSize:'20px' , position: 'absolute', top: '448px', left: '225px',backgroundColor: 'rgba(194, 163, 255, 1)', border: 'none' }} variant="link">View Details</Button>
+               <Button className="btn_details" variant="link">View Details</Button>
                </Link>
               </Card.Body>
            </Card>
-          </Col>
-      </Row>
+
     );
   }
 }

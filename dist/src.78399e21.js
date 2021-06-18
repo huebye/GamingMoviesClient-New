@@ -43076,23 +43076,13 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement(_Col.default, null, /*#__PURE__*/_react.default.createElement("div", {
         className: "movie-view"
       }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "movie-title",
-        style: {
-          fontSize: '36px',
-          textTransform: 'uppercase'
-        }
+        className: "movie-title"
       }, /*#__PURE__*/_react.default.createElement("span", {
         className: "label"
       }), /*#__PURE__*/_react.default.createElement("span", {
         className: "value"
       }, movie.Title), /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement(_Button.default, {
-        style: {
-          marginBottom: '8px',
-          backgroundColor: 'rgba(194, 163, 255, 0)',
-          border: 'none',
-          color: 'red',
-          textDecoration: 'none'
-        },
+        className: "btn_heart",
         onClick: function onClick() {
           return _this2.addFavorite(movie);
         }
@@ -43104,47 +43094,20 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/_react.default.createElement("span", {
         className: "value"
       }, movie.Description), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
-        className: "btn_zone",
-        style: {
-          marginTop: '20px'
-        }
+        className: "btn_zone"
       }, /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: "btn_back",
         onClick: onBackClick,
-        style: {
-          width: '90px',
-          marginRight: '10px',
-          fontSize: '20px',
-          backgroundColor: 'black',
-          border: 'none',
-          color: 'white',
-          textDecoration: 'none'
-        },
         variant: "link"
       }, "Back"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
         to: "/genres/".concat(movie.Genre.Name)
       }, /*#__PURE__*/_react.default.createElement(_Button.default, {
-        style: {
-          width: '90px',
-          marginRight: '10px',
-          fontSize: '20px',
-          backgroundColor: '#65ACFF',
-          border: 'none',
-          color: '#193740',
-          textDecoration: 'none'
-        },
+        className: "btn_genre",
         variant: "link"
       }, "Genre")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
         to: "/directors/".concat(movie.Director.Name)
       }, /*#__PURE__*/_react.default.createElement(_Button.default, {
-        style: {
-          width: '90px',
-          marginRight: '10px',
-          fontSize: '20px',
-          backgroundColor: 'rgba(255, 240, 101, 0.8)',
-          border: 'none',
-          color: '#193740',
-          textDecoration: 'none'
-        },
+        className: "btn_director",
         variant: "link"
       }, "Director")))))));
     }
@@ -43217,10 +43180,7 @@ var DirectorView = /*#__PURE__*/function (_React$Component) {
           director = _this$props.director,
           onBackClick = _this$props.onBackClick;
       return /*#__PURE__*/_react.default.createElement("div", {
-        className: "director-view",
-        style: {
-          fontSize: '28px'
-        }
+        className: "director-view"
       }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", {
         className: "label"
       }), /*#__PURE__*/_react.default.createElement("span", {
@@ -43233,16 +43193,8 @@ var DirectorView = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/_react.default.createElement("span", {
         className: "value2"
       }, director.Bio)), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: "btn_back",
         onClick: onBackClick,
-        style: {
-          width: '90px',
-          marginRight: '10px',
-          fontSize: '20px',
-          backgroundColor: 'black',
-          border: 'none',
-          color: 'white',
-          textDecoration: 'none'
-        },
         variant: "link"
       }, "Back"));
     }
@@ -43313,10 +43265,7 @@ var GenreView = /*#__PURE__*/function (_React$Component) {
           genre = _this$props.genre,
           onBackClick = _this$props.onBackClick;
       return /*#__PURE__*/_react.default.createElement("div", {
-        className: "director-view",
-        style: {
-          fontSize: '28px'
-        }
+        className: "genre-view"
       }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", {
         className: "label"
       }), /*#__PURE__*/_react.default.createElement("span", {
@@ -43329,16 +43278,8 @@ var GenreView = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/_react.default.createElement("span", {
         className: "value4"
       }, genre.Description)), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: "btn_back",
         onClick: onBackClick,
-        style: {
-          width: '90px',
-          marginRight: '10px',
-          fontSize: '20px',
-          backgroundColor: 'black',
-          border: 'none',
-          color: 'white',
-          textDecoration: 'none'
-        },
         variant: "link"
       }, "Back"));
     }
@@ -43657,6 +43598,8 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
         alert(user + " was deleted");
         localStorage.removeItem("user");
         localStorage.removeItem("token");
+        localStorage.removeItem("userBirthday");
+        localStorage.removeItem("userEmail");
         window.location.pathname = "/";
       }).catch(function (error) {
         console.log(error);
@@ -43678,17 +43621,9 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
         return _this4.state.favoriteMovies.includes(movie._id);
       });
       return /*#__PURE__*/_react.default.createElement(_Container.default, null, /*#__PURE__*/_react.default.createElement(_Row.default, null, /*#__PURE__*/_react.default.createElement(_Col.default, null, /*#__PURE__*/_react.default.createElement("div", {
-        className: "profile-view",
-        style: {
-          fontSize: '28px',
-          textAlign: 'center',
-          padding: '20px'
-        }
+        className: "profile-view"
       }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "profile-info",
-        style: {
-          padding: '30px'
-        }
+        className: "profile-info"
       }, /*#__PURE__*/_react.default.createElement("h3", null, "Username: ", name), /*#__PURE__*/_react.default.createElement("h3", null, "Email: ", email), /*#__PURE__*/_react.default.createElement("h3", null, "Birtday: ", (0, _dateformat.default)(birthday, "mmmm dS, yyyy")), /*#__PURE__*/_react.default.createElement("div", {
         style: {
           paddingTop: '20px'
@@ -43696,47 +43631,20 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
         to: "/"
       }, /*#__PURE__*/_react.default.createElement(_Button.default, {
-        style: {
-          width: '100px',
-          fontSize: '20px',
-          backgroundColor: 'black',
-          border: 'none',
-          textDecoration: 'none',
-          color: 'white'
-        }
+        className: "btn_back"
       }, "Back")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
         to: "/update/".concat(userData)
       }, /*#__PURE__*/_react.default.createElement(_Button.default, {
-        style: {
-          width: '100px',
-          fontSize: '20px',
-          backgroundColor: 'white',
-          border: 'none',
-          textDecoration: 'none',
-          color: 'black'
-        },
+        className: "btn_update",
         variant: "link"
       }, "Update Profile")), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        style: {
-          width: '115px',
-          fontSize: '20px',
-          backgroundColor: 'white',
-          border: 'none',
-          textDecoration: 'none',
-          color: 'black'
-        },
+        className: "btn_delete",
         onClick: function onClick() {
           _this4.deleteUser();
         }
       }, "Delete Profile"))), /*#__PURE__*/_react.default.createElement("div", {
         className: "favoritemovie-view"
-      }, /*#__PURE__*/_react.default.createElement("h2", {
-        style: {
-          width: '100%',
-          backgroundColor: '#FFDD65',
-          borderRadius: '4px'
-        }
-      }, "Favorite Movies"), favoriteMovieList.map(function (movie) {
+      }, /*#__PURE__*/_react.default.createElement("h2", null, "Favorite Movies"), favoriteMovieList.map(function (movie) {
         return /*#__PURE__*/_react.default.createElement(_Row.default, {
           style: {
             margin: '0 auto',
@@ -43746,38 +43654,20 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
           md: 2.5,
           key: movie._id
         }, /*#__PURE__*/_react.default.createElement(_Card.default, {
-          className: "profilecard",
-          style: {
-            border: 'none',
-            width: '150px'
-          }
+          className: "profilecard"
         }, /*#__PURE__*/_react.default.createElement(_Card.default.Img, {
+          className: "cardimg",
           variant: "top",
-          src: movie.ImagePath,
-          style: {
-            height: '160px'
-          }
+          src: movie.ImagePath
         }), /*#__PURE__*/_react.default.createElement(_Card.default.Body, {
-          style: {
-            backgroundColor: 'rgba(255, 255, 255, 0.6)'
-          }
+          className: "cardbody"
         }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+          className: "cardbody",
           to: "/movies/".concat(movie._id)
         }, /*#__PURE__*/_react.default.createElement(_Card.default.Title, {
-          style: {
-            marginTop: '10px',
-            fontSize: '20px',
-            color: '#193740'
-          }
+          className: "cardtitle"
         }, movie.Title)))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Button.default, {
-          style: {
-            width: 'auto',
-            fontSize: '15px',
-            backgroundColor: 'black',
-            border: 'none',
-            textDecoration: 'none',
-            color: 'white'
-          },
+          className: "btn_remove",
           onClick: function onClick() {
             return _this4.removeFavorite(movie);
           }
@@ -43872,24 +43762,29 @@ function UpdateProfile(props) {
   var onBackClick = props.onBackClick;
   var userCurrent = localStorage.getItem("user");
   var emailCurrent = localStorage.getItem("userEmail");
+  var birthdayCurrent = localStorage.getItem("userBirthday");
 
   var handleUpdate = function handleUpdate(e) {
     e.preventDefault();
     var isValid = formValidation();
-    var url = "https://gamingmovies.herokuapp.com/users/" + localStorage.getItem("user");
+    var user = localStorage.getItem("user");
+    var url = "https://gamingmovies.herokuapp.com/users/".concat(user);
 
     if (isValid) {
       _axios.default.put(url, {
-        Name: name,
+        Name: name !== '' ? name : userCurrent,
         Password: password,
-        Email: email,
-        Birthday: birthday
+        Email: email !== '' ? email : emailCurrent,
+        Birthday: birthday !== '' ? birthday : birthdayCurrent
       }, {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token")
         }
       }).then(function (response) {
         var data = response.data;
+        console.log(data.Name);
+        console.log(data.Email);
+        console.log(data.Birthday);
         localStorage.setItem("user", data.Name);
         localStorage.setItem('userEmail', data.Email);
         localStorage.setItem('userBirthday', data.Birthday);
@@ -43907,7 +43802,7 @@ function UpdateProfile(props) {
     var emailError = {};
     var isValid = true;
 
-    if (name.trim().length < 5) {
+    if (name !== '' && name.trim().length < 5) {
       nameError.nameShort = "Minimum 5 characters";
       isValid = false;
     }
@@ -43917,7 +43812,7 @@ function UpdateProfile(props) {
       isValid = false;
     }
 
-    if (!email.includes(".") && !email.includes("@")) {
+    if (email !== '' && !email.includes(".") && !email.includes("@")) {
       emailError.emailNotEmail = "Email doesn't seem valid";
       isValid = false;
     }
@@ -43931,44 +43826,31 @@ function UpdateProfile(props) {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "profileupdate-view"
   }, /*#__PURE__*/_react.default.createElement(_Form.default, {
-    className: "registration-form",
-    style: {
-      fontSize: '28px',
-      maxWidth: '500px',
-      textAlign: 'center',
-      margin: '0 auto'
-    }
+    className: "registration-form"
   }, /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
-    controlId: "formBasicUsername"
+    controlId: "formBasicName"
   }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Username"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    style: {
-      textAlign: 'center',
-      fontSize: '20px'
-    },
+    className: "inputfield",
     type: "text",
-    value: name,
-    placeholder: userCurrent,
+    autoComplete: "name",
+    defaultValue: userCurrent,
     required: true,
     onChange: function onChange(e) {
       return setName(e.target.value);
     }
   }), Object.keys(nameError).map(function (key) {
     return /*#__PURE__*/_react.default.createElement("div", {
-      key: key,
-      style: {
-        fontSize: '16px'
-      }
+      className: "error-message",
+      key: key
     }, nameError[key]);
   })), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
     controlId: "formBasicPassword"
   }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Password"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    style: {
-      textAlign: 'center',
-      fontSize: '20px'
-    },
+    className: "inputfield",
     type: "password",
     value: password,
     placeholder: "Password",
+    autoComplete: "password",
     required: true,
     onChange: function onChange(e) {
       return setPassword(e.target.value);
@@ -43976,20 +43858,16 @@ function UpdateProfile(props) {
   }), Object.keys(passwordError).map(function (key) {
     return /*#__PURE__*/_react.default.createElement("div", {
       key: key,
-      style: {
-        fontSize: '16px'
-      }
+      className: "error-message"
     }, passwordError[key]);
   })), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
     controlId: "formBasicEmail"
   }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Email"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    style: {
-      textAlign: 'center',
-      fontSize: '20px'
-    },
+    className: "inputfield",
     type: "email",
-    value: email,
-    placeholder: emailCurrent,
+    defaultValue: emailCurrent,
+    placeholder: "example@gmx.de",
+    autoComplete: "email",
     required: true,
     onChange: function onChange(e) {
       return setEmail(e.target.value);
@@ -43997,43 +43875,26 @@ function UpdateProfile(props) {
   }), Object.keys(emailError).map(function (key) {
     return /*#__PURE__*/_react.default.createElement("div", {
       key: key,
-      style: {
-        fontSize: '16px'
-      }
+      className: "error-message"
     }, emailError[key]);
-  })), /*#__PURE__*/_react.default.createElement(_Form.default.Group, null, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Birthday"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    style: {
-      textAlign: 'center',
-      fontSize: '20px'
-    },
+  })), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
+    controlId: "formBasicBirthday"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Birthday"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
+    className: "inputfield",
     type: "text",
-    value: birthday,
+    defaultValue: birthdayCurrent.substr(0, 10),
     placeholder: "yyyy-mm-dd",
     required: true,
     onChange: function onChange(e) {
       return setBirthday(e.target.value);
     }
   })), /*#__PURE__*/_react.default.createElement(_Button.default, {
-    style: {
-      width: '100px',
-      fontSize: '24px',
-      backgroundColor: 'black',
-      border: 'none',
-      textDecoration: 'none',
-      color: 'white'
-    },
+    className: "btn_back",
     onClick: onBackClick
   }, "Back"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/users"
   }, /*#__PURE__*/_react.default.createElement(_Button.default, {
-    style: {
-      width: '100px',
-      fontSize: '24px',
-      backgroundColor: 'white',
-      border: 'none',
-      textDecoration: 'none',
-      color: 'black'
-    },
+    className: "btn_save",
     type: "submit",
     onClick: handleUpdate
   }, "Save"))));
@@ -44114,8 +43975,11 @@ var NavbarView = /*#__PURE__*/function (_React$Component) {
       var _this = this;
 
       var user = localStorage.getItem('user');
-      return /*#__PURE__*/_react.default.createElement(_Container.default, null, /*#__PURE__*/_react.default.createElement(_Row.default, {
-        className: "main-view justify-content-md-center"
+      return /*#__PURE__*/_react.default.createElement(_Container.default, {
+        fluid: true
+      }, /*#__PURE__*/_react.default.createElement(_Row.default, {
+        className: "main-view justify-content-md-center",
+        xs: 12
       }, /*#__PURE__*/_react.default.createElement(_Nav.default, {
         as: "ul",
         style: {
@@ -44280,43 +44144,20 @@ var MovieCard = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var movie = this.props.movie;
-      return /*#__PURE__*/_react.default.createElement(_Row.default, {
-        className: "main-view justify-content-md-center"
-      }, /*#__PURE__*/_react.default.createElement(_Col.default, null, /*#__PURE__*/_react.default.createElement(_Card.default, {
-        style: {
-          width: '340px',
-          margin: '10px',
-          border: 'none',
-          minHeight: '500px',
-          backgroundColor: 'rgba(255, 255, 255, 0.2)',
-          boxShadow: '5px -5px 10px rgba(25, 55, 64, 0.3)'
-        }
+      return /*#__PURE__*/_react.default.createElement(_Card.default, {
+        className: "card"
       }, /*#__PURE__*/_react.default.createElement(_Card.default.Img, {
+        className: "cardimg",
         variant: "top",
-        src: movie.ImagePath,
-        style: {
-          height: '360px'
-        }
+        src: movie.ImagePath
       }), /*#__PURE__*/_react.default.createElement(_Card.default.Body, null, /*#__PURE__*/_react.default.createElement(_Card.default.Title, {
-        style: {
-          fontSize: '24px',
-          color: '#193740'
-        }
+        className: "cardtitle"
       }, movie.Title), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
         to: "/movies/".concat(movie._id)
       }, /*#__PURE__*/_react.default.createElement(_Button.default, {
-        style: {
-          textDecoration: 'none',
-          color: 'white',
-          fontSize: '20px',
-          position: 'absolute',
-          top: '448px',
-          left: '225px',
-          backgroundColor: 'rgba(194, 163, 255, 1)',
-          border: 'none'
-        },
+        className: "btn_details",
         variant: "link"
-      }, "View Details"))))));
+      }, "View Details"))));
     }
   }]);
 
@@ -44367,10 +44208,8 @@ function MoviesList(props) {
   if (!movies) return /*#__PURE__*/_react.default.createElement("div", {
     className: "main-view"
   });
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Row.default, {
-    className: "main-view justify-content-md-center"
-  }, /*#__PURE__*/_react.default.createElement(_Col.default, {
-    md: 12,
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Col.default, {
+    xs: 12,
     style: {
       margin: '1em'
     }
@@ -44378,12 +44217,15 @@ function MoviesList(props) {
     visibilityFilter: visibilityFilter
   })), filteredMovies.map(function (m) {
     return /*#__PURE__*/_react.default.createElement(_Col.default, {
-      md: 2.5,
+      className: "m-2",
+      sm: 'auto',
+      md: 'auto',
+      xl: 'auto',
       key: m._id
     }, /*#__PURE__*/_react.default.createElement(_movieCard.MovieCard, {
       movie: m
     }));
-  })));
+  }));
 }
 
 ;
@@ -44430,6 +44272,8 @@ var _movieslistView = _interopRequireDefault(require("../movieslist-view/moviesl
 var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
 
 var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
+
+var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44495,7 +44339,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
     value: function onLoggedIn(authData) {
       console.log(authData);
       this.setState({
-        user: this.props.setUser(authData.user),
+        user: this.props.setUser(authData.user.Name),
         userEmail: authData.user.Email,
         userBirthday: authData.user.Birthday,
         favoriteMovies: authData.user.FavoriteMovies
@@ -44554,9 +44398,15 @@ var MainView = /*#__PURE__*/function (_React$Component) {
           if (movies.length === 0) return /*#__PURE__*/_react.default.createElement("div", {
             className: "main-view"
           });
-          return /*#__PURE__*/_react.default.createElement(_Col.default, null, /*#__PURE__*/_react.default.createElement(_navbarView.NavbarView, null), /*#__PURE__*/_react.default.createElement(_movieslistView.default, {
+          return /*#__PURE__*/_react.default.createElement(_Container.default, {
+            fluid: true
+          }, /*#__PURE__*/_react.default.createElement(_Row.default, null, /*#__PURE__*/_react.default.createElement(_Col.default, {
+            className: "main-view justify-content-md-center"
+          }, /*#__PURE__*/_react.default.createElement(_navbarView.NavbarView, null), /*#__PURE__*/_react.default.createElement("div", {
+            className: "d-flex flex-wrap justify-content-center"
+          }, /*#__PURE__*/_react.default.createElement(_movieslistView.default, {
             movies: movies
-          }));
+          })))));
         }
       }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
         path: "/register",
@@ -44656,7 +44506,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
           }));
         }
       }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-        path: "/update",
+        path: "/update/:name",
         render: function render(_ref5) {
           var history = _ref5.history;
           if (!user) return /*#__PURE__*/_react.default.createElement(_Col.default, null, /*#__PURE__*/_react.default.createElement(_loginView.LoginView, {
@@ -44695,7 +44545,7 @@ var _default = (0, _reactRedux.connect)(mapStateToProps, {
 })(MainView);
 
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","react-redux":"../node_modules/react-redux/es/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../../actions/actions":"actions/actions.js","../login-view/login-view":"components/login-view/login-view.jsx","../registration-view/registration-view":"components/registration-view/registration-view.jsx","../movie-view/movie-view":"components/movie-view/movie-view.jsx","../director-view/director-view":"components/director-view/director-view.jsx","../genre-view/genre-view":"components/genre-view/genre-view.jsx","../profile-view/profile-view":"components/profile-view/profile-view.jsx","../updateprofile-view/updateprofile-view":"components/updateprofile-view/updateprofile-view.jsx","../navbar-view/navbar-view":"components/navbar-view/navbar-view.jsx","../movieslist-view/movieslist-view":"components/movieslist-view/movieslist-view.jsx","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js"}],"index.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","react-redux":"../node_modules/react-redux/es/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../../actions/actions":"actions/actions.js","../login-view/login-view":"components/login-view/login-view.jsx","../registration-view/registration-view":"components/registration-view/registration-view.jsx","../movie-view/movie-view":"components/movie-view/movie-view.jsx","../director-view/director-view":"components/director-view/director-view.jsx","../genre-view/genre-view":"components/genre-view/genre-view.jsx","../profile-view/profile-view":"components/profile-view/profile-view.jsx","../updateprofile-view/updateprofile-view":"components/updateprofile-view/updateprofile-view.jsx","../navbar-view/navbar-view":"components/navbar-view/navbar-view.jsx","../movieslist-view/movieslist-view":"components/movieslist-view/movieslist-view.jsx","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js"}],"index.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -44764,10 +44614,11 @@ var GamingMoviesApplication = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/_react.default.createElement(_reactRedux.Provider, {
         store: store
       }, /*#__PURE__*/_react.default.createElement(_Container.default, {
+        className: "container-fluid",
         style: {
           fontFamily: 'Teko',
-          minHeight: '100vh',
-          maxWidth: '100%'
+          minHeight: '100vH',
+          minWidth: '100vW'
         }
       }, /*#__PURE__*/_react.default.createElement(_mainView.default, null)));
     }

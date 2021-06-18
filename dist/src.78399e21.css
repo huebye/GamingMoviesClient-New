@@ -9,10 +9,72 @@
   position: relative;
   top: 100px;
 }
+
+.movie-title {
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+.btn_heart {
+  margin-bottom: 8px;
+  background-color: rgba(194, 163, 255, 0);
+  border: none;
+  color: blue;
+  text-decoration: none;
+}
+
+.btn_zone {
+  margin-top: 20px;
+}
+
+.btn_back {
+  width: 90px;
+  font-size: 20px;
+  background-color: black;
+  border: none;
+  text-decoration: none;
+  color: white;
+  margin-right: 10px;
+}
+
+.btn_back:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.btn_genre {
+  width: 90px;
+  font-size: 20px;
+  background-color: #65ACFF;
+  border: none;
+  text-decoration: none;
+  color: #193740;
+  margin-right: 10px;
+}
+
+.btn_genre:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.btn_director {
+  width: 90px;
+  font-size: 20px;
+  background-color: rgba(255, 240, 101, 0.8);
+  border: none;
+  text-decoration: none;
+  color: #193740;
+  margin-right: 10px;
+}
+
+.btn_director:hover {
+  text-decoration: none;
+  color: white;
+}
 .director-view {
   background: rgba(255, 255, 255, 0.16);
   text-align: center;
-  font-size: 26px;
+  font-size: 28px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 4px;
@@ -34,6 +96,21 @@
 
 .value2 {
   font-size: 25px;
+}
+
+.btn_back {
+  width: 90px;
+  font-size: 20px;
+  background-color: black;
+  border: none;
+  text-decoration: none;
+  color: white;
+  margin-right: 10px;
+}
+
+.btn_back:hover {
+  text-decoration: none;
+  color: white;
 }
 .genre-view {
   background: rgba(255, 255, 255, 0.16);
@@ -61,11 +138,30 @@
 .value4 {
   font-size: 25px;
 }
+
+.genre-view {
+  font-size: 28px;
+}
+
+.btn_back {
+  width: 90px;
+  font-size: 20px;
+  background-color: black;
+  border: none;
+  text-decoration: none;
+  color: white;
+  margin-right: 10px;
+}
+
+.btn_back:hover {
+  text-decoration: none;
+  color: white;
+}
 .profile-view {
   margin: 0 auto;
   text-align: center;
-  font-size: 26px;
-  padding: 20px;
+  font-size: 28px;
+  padding: 40px;
   border-radius: 4px;
   max-width: 800px;
   height: auto;
@@ -79,7 +175,7 @@
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.26);
   border-radius: 4px;
-  padding: 10px;
+  padding: 40px;
   width: inherit;
   height: auto;
   text-align: center;
@@ -106,8 +202,95 @@
   border-radius: 4px;
 }
 
+.favoritemovie-view > h2 {
+  width: 100%;
+  background-color: #FFDD65;
+  border-radius: 4px;
+}
+
 .profilecard {
-  display: inline-block;
+  border: none;
+  width: 150px;
+}
+
+.cardbody {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.cardbody:hover {
+  text-decoration: none;
+}
+
+.cardtitle {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #193740;
+}
+
+.cardtitle:hover {
+  color: black;
+  text-decoration: solid;
+  text-decoration-line: none;
+}
+
+.btn_update {
+  width: 100px;
+  font-size: 20px;
+  background-color: white;
+  border: none;
+  text-decoration: none;
+  color: black;
+}
+
+.btn_update:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.btn_delete {
+  width: 115px;
+  font-size: 20px;
+  background-color: white;
+  border: none;
+  text-decoration: none;
+  color: black;
+}
+
+.btn_delete:hover {
+  color: black;
+  background-color: white;
+}
+
+.cardimg {
+  height: 160px;
+}
+
+.btn_remove {
+  width: auto;
+  font-size: 15px;
+  background-color: black;
+  border: none;
+  text-decoration: none;
+  color: white;
+}
+
+.btn_remove:hover {
+  text-decoration: none;
+  color: white;
+  background: black;
+}
+
+.btn_back {
+  width: 100px;
+  font-size: 20px;
+  background-color: black;
+  border: none;
+  text-decoration: none;
+  color: white;
+}
+
+.btn_back:hover {
+  background-color: black;
 }
 .profileupdate-view {
   margin: 0 auto;
@@ -121,8 +304,74 @@
   height: auto;
   background-color: rgba(255, 255, 255, 0.26);
 }
-.btn:hover {
+
+.registration-form {
+  font-size: 28px;
+  max-width: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.inputfield {
+  text-align: center;
+  font-size: 20px;
+}
+
+.error-message {
+  font-size: 16px;
+  color: red;
+}
+
+.btn_save {
+  width: 100px;
+  font-size: 24px;
   background-color: white;
+  border: none;
+  text-decoration: none;
+  color: black;
+}
+
+.btn_save:hover {
+  background-color: white;
+  color: black;
+}
+.card {
+  width: 340px;
+  margin: 10px;
+  border: none;
+  min-height: 500px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 5px -5px 10px rgba(25, 55, 64, 0.3);
+  transition-duration: 1s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 6px -6px 15px rgba(25, 55, 64, 0.25);
+}
+
+.cardimg {
+  height: 360px;
+}
+
+.cardtitle {
+  font-size: 24px;
+  color: #193740;
+}
+
+.btn_details {
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  top: 448px;
+  left: 225px;
+  background-color: #c2a3ff;
+  border: none;
+}
+
+.btn_details:hover {
+  text-decoration: none;
+  color: black;
 }
 
 /*# sourceMappingURL=/src.78399e21.css.map */

@@ -2,7 +2,7 @@
     background: 
     rgba(255, 255, 255, 0.16);
     text-align: center;
-    font-size: 26px;
+    font-size: 28px;
     margin: 0 auto;
     padding: 20px;
     border-radius: 4px;
@@ -24,4 +24,19 @@
 
 .value2 {
     font-size: 25px;
+}
+
+.btn_back {
+    width: 90px;
+    font-size: 20px;
+    background-color: black;
+    border: none;
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+}
+
+.btn_back:hover {
+    text-decoration: none;
+    color: white;
 }

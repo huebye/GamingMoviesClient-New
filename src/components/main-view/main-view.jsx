@@ -22,6 +22,7 @@ import   MoviesList  from '../movieslist-view/movieslist-view'
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Container from "react-bootstrap/Container";
 
 
 //Export component.
@@ -53,7 +54,7 @@ class MainView extends React.Component {
       onLoggedIn(authData) {
         console.log(authData);
         this.setState({
-          user: this.props.setUser(authData.user),
+          user: this.props.setUser(authData.user.Name),
           userEmail: authData.user.Email,
           userBirthday: authData.user.Birthday,
           favoriteMovies: authData.user.FavoriteMovies
@@ -101,10 +102,19 @@ class MainView extends React.Component {
                   <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                 </Col>
                 if (movies.length === 0) return <div className="main-view"></div>;
-                return  <Col>
-                <NavbarView />
-                <MoviesList movies={movies}/>
-                </Col>
+                return  (
+                  <Container fluid>
+                    <Row>
+                        <Col className="main-view justify-content-md-center">
+                      <NavbarView />
+                      <div className="d-flex flex-wrap justify-content-center">
+                    <MoviesList movies={movies} />
+                       </div>
+                      </Col>
+                    </Row>
+                  </Container>
+                
+                );
               }} />
 
               <Route path="/register" render={() => {
@@ -162,7 +172,7 @@ class MainView extends React.Component {
               }
               } />
 
-              <Route path="/update" render={({ history }) => {
+              <Route path="/update/:name" render={({ history }) => {
                 if (!user) return <Col>
                                   <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                                 </Col>

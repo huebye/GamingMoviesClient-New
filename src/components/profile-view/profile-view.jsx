@@ -74,6 +74,8 @@ export class ProfileView extends React.Component {
           alert(user + " was deleted");
           localStorage.removeItem("user");
           localStorage.removeItem("token");
+          localStorage.removeItem("userBirthday");
+          localStorage.removeItem("userEmail");
           window.location.pathname = "/";
         })
         .catch(function (error) {
@@ -93,42 +95,43 @@ export class ProfileView extends React.Component {
           <Container>
           <Row>
           <Col>
-          <div className="profile-view" style={{ fontSize: '28px', textAlign: 'center', padding: '20px'}}>
-              <div className="profile-info" style={{padding: '30px'}}>
+          <div className="profile-view">
+              <div className="profile-info">
                 <h3>Username: {name}</h3>
                 <h3>Email: {email}</h3>
                 <h3>Birtday: {dateFormat(birthday, "mmmm dS, yyyy")}</h3>
                   <div style={{paddingTop: '20px'}}>
                   <Link to={`/`}>
-                <Button style={{ width: '100px' ,fontSize: '20px' ,backgroundColor: 'black', border: 'none', textDecoration: 'none', color: 'white' }} >
+                <Button className="btn_back" >
                   Back
                 </Button>
                 </Link>
                 <Link to={`/update/${userData}`}>
-                <Button style={{ width: '100px' ,fontSize: '20px' ,backgroundColor: 'white', border: 'none', textDecoration: 'none', color: 'black' }} variant="link">
+                <Button className="btn_update" variant="link">
                   Update Profile
                 </Button>
                 </Link>
-                <Button style={{ width: '115px' ,fontSize: '20px' ,backgroundColor: 'white', border: 'none', textDecoration: 'none', color: 'black' }} onClick={() => { this.deleteUser() }} >Delete Profile</Button>
+                <Button className="btn_delete" onClick={() => { this.deleteUser() }} >Delete Profile</Button>
                 </div>
               </div>
               <div className="favoritemovie-view">
-                <h2 style={{ width: '100%', backgroundColor: '#FFDD65', borderRadius: '4px'}}>Favorite Movies</h2>
+                <h2 >Favorite Movies</h2>
 
                 {favoriteMovieList.map((movie) => {
             return (
+              
               <Row  style={{ margin: '0 auto', justifyContent: 'center'}}>
               <Col md={2.5} key={movie._id}>
-                <Card className="profilecard" style={{ border: 'none', width: '150px'}}>
-                  <Card.Img variant="top" src={movie.ImagePath} style={{ height: '160px'}} />
-                  <Card.Body style={{backgroundColor: 'rgba(255, 255, 255, 0.6)'}}>
-                    <Link to={`/movies/${movie._id}`}>
-                      <Card.Title style={{ marginTop: '10px', fontSize: '20px', color: '#193740' }}>{movie.Title}</Card.Title>
+                <Card className="profilecard">
+                  <Card.Img className="cardimg" variant="top" src={movie.ImagePath} />
+                  <Card.Body className="cardbody">
+                    <Link className="cardbody" to={`/movies/${movie._id}`}>
+                      <Card.Title className="cardtitle">{movie.Title}</Card.Title>
                     </Link>
                   </Card.Body>
                 </Card>
                 <div>
-                <Button style={{ width: 'auto' ,fontSize: '15px' ,backgroundColor: 'black', border: 'none', textDecoration: 'none', color: 'white' }} onClick={() => this.removeFavorite(movie)} >
+                <Button className="btn_remove" onClick={() => this.removeFavorite(movie)} >
                   Remove
                 </Button>
                 </div>

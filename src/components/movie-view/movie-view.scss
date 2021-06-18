@@ -9,3 +9,65 @@
     position: relative;
     top: 100px;
 }
+
+.movie-title {
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.btn_heart {
+    margin-bottom: 8px;
+    background-color: rgba(194, 163, 255, 0);
+    border: none;
+    color: blue;
+    text-decoration: none;
+}
+
+.btn_zone {
+    margin-top: 20px;
+}
+
+.btn_back {
+    width: 90px;
+    font-size: 20px;
+    background-color: black;
+    border: none;
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+}
+
+.btn_back:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.btn_genre {
+    width: 90px;
+    font-size: 20px;
+    background-color: #65ACFF;
+    border: none;
+    text-decoration: none;
+    color: #193740;
+    margin-right: 10px;
+}
+
+.btn_genre:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.btn_director {
+    width: 90px;
+    font-size: 20px;
+    background-color: rgba(255, 240, 101, 0.8);
+    border: none;
+    text-decoration: none;
+    color: #193740;
+    margin-right: 10px;
+}
+
+.btn_director:hover {
+    text-decoration: none;
+    color: white;
+}

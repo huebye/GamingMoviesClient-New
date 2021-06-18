@@ -20,24 +20,24 @@ export function UpdateProfile(props) {
     const onBackClick = props.onBackClick;
     const userCurrent = localStorage.getItem("user");
     const emailCurrent = localStorage.getItem("userEmail");
+    const birthdayCurrent = localStorage.getItem("userBirthday");
 
     const handleUpdate = (e) => {
         e.preventDefault();
     
         const isValid = formValidation();
-    
+        let user = localStorage.getItem("user")
         const url =
-          "https://gamingmovies.herokuapp.com/users/" +
-          localStorage.getItem("user");
+          `https://gamingmovies.herokuapp.com/users/${user}`
     
         if (isValid) {
           axios.put(
               url,
               {
-                Name: name,
+                Name: name !== '' ? name : userCurrent,
                 Password: password,
-                Email: email,
-                Birthday: birthday,
+                Email: email !== '' ? email : emailCurrent,
+                Birthday: birthday !== '' ? birthday : birthdayCurrent,
               },
               {
                 headers: {
@@ -47,6 +47,9 @@ export function UpdateProfile(props) {
             )
             .then((response) => {
               const data = response.data;
+              console.log(data.Name);
+              console.log(data.Email);
+              console.log(data.Birthday);
               localStorage.setItem("user", data.Name);
               localStorage.setItem('userEmail', data.Email);
               localStorage.setItem('userBirthday', data.Birthday);
@@ -64,8 +67,10 @@ export function UpdateProfile(props) {
         const passwordError = {};
         const emailError = {};
         let isValid = true;
-    
-        if (name.trim().length < 5) {
+        
+
+
+        if (name !== '' && name.trim().length < 5) {
           nameError.nameShort = "Minimum 5 characters";
           isValid = false;
         }
@@ -76,11 +81,11 @@ export function UpdateProfile(props) {
         }
 
     
-        if (!email.includes(".") && !email.includes("@")) {
+        if (email !== '' && !email.includes(".") && !email.includes("@")) {
           emailError.emailNotEmail = "Email doesn't seem valid";
           isValid = false;
         }
-    
+        
         setNameError(nameError);
         setPasswordError(passwordError);
         setEmailError(emailError);
@@ -89,20 +94,20 @@ export function UpdateProfile(props) {
 
       return (
         <div className="profileupdate-view">
-          <Form className="registration-form" style={{fontSize: '28px', maxWidth: '500px', textAlign: 'center', margin: '0 auto'}}>
-            <Form.Group controlId="formBasicUsername">
+          <Form className="registration-form">
+            <Form.Group controlId="formBasicName">
               <Form.Label>Username</Form.Label>
               <Form.Control
-                style={{ textAlign: 'center', fontSize: '20px'}}
+                className="inputfield"
                 type="text"
-                value={name}
-                placeholder={userCurrent}
+                autoComplete="name"
+                defaultValue={userCurrent}
                 required
                 onChange={(e) => setName(e.target.value)}
               />
               {Object.keys(nameError).map((key) => {
                 return (
-                  <div key={key} style={{ fontSize: '16px'}}>
+                  <div className="error-message" key={key}>
                     {nameError[key]}
                   </div>
                 );
@@ -111,16 +116,17 @@ export function UpdateProfile(props) {
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control
-                style={{ textAlign: 'center', fontSize: '20px'}}
+                className="inputfield"
                 type="password"
                 value={password}
                 placeholder="Password"
+                autoComplete="password"
                 required
                 onChange={(e) => setPassword(e.target.value)}
               />
               {Object.keys(passwordError).map((key) => {
                 return (
-                  <div key={key} style={{ fontSize: '16px'}}>
+                  <div key={key} className="error-message">
                     {passwordError[key]}
                   </div>
                 );
@@ -129,36 +135,37 @@ export function UpdateProfile(props) {
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control
-                style={{ textAlign: 'center', fontSize: '20px'}}
+                className="inputfield"
                 type="email"
-                value={email}
-                placeholder={emailCurrent}
+                defaultValue={emailCurrent}
+                placeholder="example@gmx.de"
+                autoComplete="email"
                 required
                 onChange={(e) => setEmail(e.target.value)}
               />
               {Object.keys(emailError).map((key) => {
                 return (
-                  <div key={key} style={{ fontSize: '16px'}}>
+                  <div key={key} className="error-message">
                     {emailError[key]}
                   </div>
                 );
               })}
             </Form.Group>
-            <Form.Group>
+            <Form.Group controlId="formBasicBirthday">
               <Form.Label>Birthday</Form.Label>
               <Form.Control
-                style={{ textAlign: 'center', fontSize: '20px'}}
+                className="inputfield"
                 type="text"
-                value={birthday}
+                defaultValue={birthdayCurrent.substr(0, 10)}
                 placeholder="yyyy-mm-dd"
                 required
                 onChange={(e) => setBirthday(e.target.value)}
               />
             </Form.Group>
-            <Button style={{ width: '100px' ,fontSize: '24px' ,backgroundColor: 'black', border: 'none', textDecoration: 'none', color: 'white' }} onClick={onBackClick}>Back</Button>
+            <Button className="btn_back" onClick={onBackClick}>Back</Button>
             <Link to={`/users`}>
               <Button
-                style={{ width: '100px' ,fontSize: '24px' ,backgroundColor: 'white', border: 'none', textDecoration: 'none', color: 'black' }}
+                className="btn_save"
                 type="submit"
                 onClick={handleUpdate}
               >
