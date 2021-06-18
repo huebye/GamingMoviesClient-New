@@ -44339,7 +44339,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
     value: function onLoggedIn(authData) {
       console.log(authData);
       this.setState({
-        user: this.props.setUser(authData.user.Name),
+        user: this.props.setUser(authData.user),
         userEmail: authData.user.Email,
         userBirthday: authData.user.Birthday,
         favoriteMovies: authData.user.FavoriteMovies
