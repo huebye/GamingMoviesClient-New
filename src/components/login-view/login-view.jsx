@@ -8,6 +8,7 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 
+import '../login-view/login-view.scss'
 import { Link } from "react-router-dom";
 
 export function LoginView(props) {
@@ -59,45 +60,45 @@ export function LoginView(props) {
     return (
       <div>
         <Row>
-        <Nav as="ul" style={{ maxHeight: '60px', fontSize: '25px', justifyContent: 'flex-end', backgroundColor: 'rgba(194, 163, 255, 0.8)', minWidth: '100%'}}>
+        <Nav as="ul" className="nav_login">
               <Container>
-                <Link to="/"><Navbar.Brand style={{ position: 'absolute', left: '10px' , fontSize: '44px', color: 'white', fontWeight: '800'}}>GAMING MOVIES</Navbar.Brand></Link>
+                <Link to="/"><Navbar.Brand className="nav_login_logo" >GAMING MOVIES</Navbar.Brand></Link>
                 </Container>
         </Nav>
-        <Container style={{ display: 'flex'}}>
-        <Form style={{borderRadius: '4px' ,padding: '30px' ,fontSize: '28px', maxWidth: '600px', textAlign: 'center', margin: '0 auto', marginTop: '200px', background: 'rgba(255, 255, 255, 0.26)', height: 'auto', width: 'auto'}}>
-          <Form.Group controlId="formUsername" md={12} style={{padding: '10px', marginTop: '20px'}}>
-            <Form.Label style={{ fontSize: '22px', float: 'left', width: '100px'}}>Username:</Form.Label>
-            <Form.Control style={{ margin: '0 auto' ,textAlign: 'center', fontSize: '20px', width: '200px'}} type="text" onChange={e => setName(e.target.value)} />
-          </Form.Group>
+        <Container className="container_login">
+        <Form className="form_login">
+          <Form.Group controlId="formUsername" className="formUsername" md={12}>
+            <Form.Label className="form_label_login">Username:</Form.Label>
+            <Form.Control className="form_input_login" type="text" onChange={e => setName(e.target.value)} />
+          </Form.Group> 
           {Object.keys(nameError).map((key) => {
               return (
-                <div key={key} style={{ fontSize: '16px'}}>
+                <div key={key} className="errormessage_login">
                   {nameError[key]}
                 </div>
               );
             })}
     
-          <Form.Group controlId="formPassword" style={{padding: '10px'}}>
-            <Form.Label style={{ fontSize: '22px', float: 'left', width: '100px'}}>Password:</Form.Label>
-            <Form.Control style={{margin: '0 auto' ,textAlign: 'center', fontSize: '20px', width: '200px'}} type="password" onChange={e => setPassword(e.target.value)} />
+          <Form.Group controlId="formPassword" className="formPassword">
+            <Form.Label className="form_label_login">Password:</Form.Label>
+            <Form.Control className="form_input_login" type="password" onChange={e => setPassword(e.target.value)} />
           </Form.Group>
 
           {Object.keys(passwordError).map((key) => {
           return (
-            <div key={key} style={{ fontSize: '16px'}}>
+            <div key={key} className="errormessage_login">
               {passwordError[key]}
             </div>
           );
         })}
 
           <Link to={`/register`}>
-          <Button style={{ width: '100px' ,fontSize: '24px' ,backgroundColor: 'black', border: 'none', color: 'white',textDecoration: 'none' }} variant="link">
+          <Button className="btn_register"  variant="link">
             Register
           </Button>
           </Link>
           <Link to={`/`}>
-          <Button style={{ width: '100px' ,fontSize: '24px' ,backgroundColor: '#C2A3FF', border: 'none', margin: '24px', color: 'white',textDecoration: 'none' }} variant="link" type="submit" onClick={handleLogin}>
+          <Button className="btn_login" variant="link" type="submit" onClick={handleLogin}>
             Login
           </Button>
           </Link>

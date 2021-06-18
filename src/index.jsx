@@ -16,7 +16,7 @@ class GamingMoviesApplication extends React.Component {
     render() {
         return (
             <Provider store={store}>
-              <Container className="container-fluid" style={{ fontFamily: 'Teko' , minHeight: '100vH', minWidth: '100vW'}}>
+              <Container className="container-fluid container1234">
                 <MainView />
               </Container>
             </Provider>

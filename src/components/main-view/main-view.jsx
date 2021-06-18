@@ -107,7 +107,7 @@ class MainView extends React.Component {
                     <Row>
                         <Col className="main-view justify-content-md-center">
                       <NavbarView />
-                      <div className="d-flex flex-wrap justify-content-center">
+                      <div className="d-flex flex-wrap justify-content-md-center">
                     <MoviesList movies={movies} />
                        </div>
                       </Col>

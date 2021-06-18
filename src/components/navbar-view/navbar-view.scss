@@ -1,0 +1,43 @@
+.navbar1234 {
+    max-height: 60px;
+    font-size: 25px;
+    justify-content: flex-end;
+    background-color: rgba(194, 163, 255, 0.8);
+    min-width: 100vW;
+}
+
+.logo_style {
+    position: absolute;
+    left: 10px;
+    font-size: 38px;
+    color: white;
+    font-weight: 800;
+}
+
+.btn_profile {
+    border-radius: 0;
+    font-size: 25px;
+    height: 53px;
+    color: black;
+    background-color: white;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+}
+
+.btn_profile:hover {
+    background-color: rgba(194, 163, 255, 0.2);
+}
+
+.btn_logout {
+    color: white;
+    background-color: black;
+    width: auto;
+    text-align: center;
+}
+
+.btn_logout:hover {
+    background-color: rgba(194, 163, 255, 0.2);
+    color:black;
+}

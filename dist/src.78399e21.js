@@ -42376,7 +42376,79 @@ Navbar.Collapse = _NavbarCollapse.default;
 Navbar.Text = NavbarText;
 var _default = Navbar;
 exports.default = _default;
-},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","uncontrollable":"../node_modules/uncontrollable/lib/esm/index.js","./createWithBsPrefix":"../node_modules/react-bootstrap/esm/createWithBsPrefix.js","./NavbarBrand":"../node_modules/react-bootstrap/esm/NavbarBrand.js","./NavbarCollapse":"../node_modules/react-bootstrap/esm/NavbarCollapse.js","./NavbarToggle":"../node_modules/react-bootstrap/esm/NavbarToggle.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./NavbarContext":"../node_modules/react-bootstrap/esm/NavbarContext.js","./SelectableContext":"../node_modules/react-bootstrap/esm/SelectableContext.js"}],"components/login-view/login-view.jsx":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","uncontrollable":"../node_modules/uncontrollable/lib/esm/index.js","./createWithBsPrefix":"../node_modules/react-bootstrap/esm/createWithBsPrefix.js","./NavbarBrand":"../node_modules/react-bootstrap/esm/NavbarBrand.js","./NavbarCollapse":"../node_modules/react-bootstrap/esm/NavbarCollapse.js","./NavbarToggle":"../node_modules/react-bootstrap/esm/NavbarToggle.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./NavbarContext":"../node_modules/react-bootstrap/esm/NavbarContext.js","./SelectableContext":"../node_modules/react-bootstrap/esm/SelectableContext.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/login-view/login-view.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/login-view/login-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42401,6 +42473,8 @@ var _Nav = _interopRequireDefault(require("react-bootstrap/Nav"));
 var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
 
 var _Navbar = _interopRequireDefault(require("react-bootstrap/Navbar"));
+
+require("../login-view/login-view.scss");
 
 var _reactRouterDom = require("react-router-dom");
 
@@ -42484,60 +42558,23 @@ function LoginView(props) {
 
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Row.default, null, /*#__PURE__*/_react.default.createElement(_Nav.default, {
     as: "ul",
-    style: {
-      maxHeight: '60px',
-      fontSize: '25px',
-      justifyContent: 'flex-end',
-      backgroundColor: 'rgba(194, 163, 255, 0.8)',
-      minWidth: '100%'
-    }
+    className: "nav_login"
   }, /*#__PURE__*/_react.default.createElement(_Container.default, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, /*#__PURE__*/_react.default.createElement(_Navbar.default.Brand, {
-    style: {
-      position: 'absolute',
-      left: '10px',
-      fontSize: '44px',
-      color: 'white',
-      fontWeight: '800'
-    }
+    className: "nav_login_logo"
   }, "GAMING MOVIES")))), /*#__PURE__*/_react.default.createElement(_Container.default, {
-    style: {
-      display: 'flex'
-    }
+    className: "container_login"
   }, /*#__PURE__*/_react.default.createElement(_Form.default, {
-    style: {
-      borderRadius: '4px',
-      padding: '30px',
-      fontSize: '28px',
-      maxWidth: '600px',
-      textAlign: 'center',
-      margin: '0 auto',
-      marginTop: '200px',
-      background: 'rgba(255, 255, 255, 0.26)',
-      height: 'auto',
-      width: 'auto'
-    }
+    className: "form_login"
   }, /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
     controlId: "formUsername",
-    md: 12,
-    style: {
-      padding: '10px',
-      marginTop: '20px'
-    }
+    className: "formUsername",
+    md: 12
   }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, {
-    style: {
-      fontSize: '22px',
-      float: 'left',
-      width: '100px'
-    }
+    className: "form_label_login"
   }, "Username:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    style: {
-      margin: '0 auto',
-      textAlign: 'center',
-      fontSize: '20px',
-      width: '200px'
-    },
+    className: "form_input_login",
     type: "text",
     onChange: function onChange(e) {
       return setName(e.target.value);
@@ -42545,28 +42582,15 @@ function LoginView(props) {
   })), Object.keys(nameError).map(function (key) {
     return /*#__PURE__*/_react.default.createElement("div", {
       key: key,
-      style: {
-        fontSize: '16px'
-      }
+      className: "errormessage_login"
     }, nameError[key]);
   }), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
     controlId: "formPassword",
-    style: {
-      padding: '10px'
-    }
+    className: "formPassword"
   }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, {
-    style: {
-      fontSize: '22px',
-      float: 'left',
-      width: '100px'
-    }
+    className: "form_label_login"
   }, "Password:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    style: {
-      margin: '0 auto',
-      textAlign: 'center',
-      fontSize: '20px',
-      width: '200px'
-    },
+    className: "form_input_login",
     type: "password",
     onChange: function onChange(e) {
       return setPassword(e.target.value);
@@ -42574,34 +42598,17 @@ function LoginView(props) {
   })), Object.keys(passwordError).map(function (key) {
     return /*#__PURE__*/_react.default.createElement("div", {
       key: key,
-      style: {
-        fontSize: '16px'
-      }
+      className: "errormessage_login"
     }, passwordError[key]);
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/register"
   }, /*#__PURE__*/_react.default.createElement(_Button.default, {
-    style: {
-      width: '100px',
-      fontSize: '24px',
-      backgroundColor: 'black',
-      border: 'none',
-      color: 'white',
-      textDecoration: 'none'
-    },
+    className: "btn_register",
     variant: "link"
   }, "Register")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, /*#__PURE__*/_react.default.createElement(_Button.default, {
-    style: {
-      width: '100px',
-      fontSize: '24px',
-      backgroundColor: '#C2A3FF',
-      border: 'none',
-      margin: '24px',
-      color: 'white',
-      textDecoration: 'none'
-    },
+    className: "btn_login",
     variant: "link",
     type: "submit",
     onClick: handleLogin
@@ -42615,7 +42622,12 @@ LoginView.propTypes = {
   }),
   onLoggedIn: _propTypes.default.func
 };
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","axios":"../node_modules/axios/index.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"components/registration-view/registration-view.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","axios":"../node_modules/axios/index.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","../login-view/login-view.scss":"components/login-view/login-view.scss","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"components/registration-view/registration-view.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/registration-view/registration-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42636,6 +42648,8 @@ var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
 var _Navbar = _interopRequireDefault(require("react-bootstrap/Navbar"));
 
 var _Nav = _interopRequireDefault(require("react-bootstrap/Nav"));
+
+require("../registration-view/registration-view.scss");
 
 var _reactRouterDom = require("react-router-dom");
 
@@ -42744,53 +42758,21 @@ function RegistrationView() {
 
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Nav.default, {
     as: "ul",
-    style: {
-      maxHeight: '60px',
-      fontSize: '25px',
-      justifyContent: 'flex-end',
-      backgroundColor: 'rgba(194, 163, 255, 0.8)',
-      minWidth: '100%'
-    }
+    className: "nav_register"
   }, /*#__PURE__*/_react.default.createElement(_Container.default, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, /*#__PURE__*/_react.default.createElement(_Navbar.default.Brand, {
-    style: {
-      position: 'absolute',
-      left: '10px',
-      fontSize: '44px',
-      color: 'white',
-      fontWeight: '800'
-    }
+    className: "nav_register_logo"
   }, "GAMING MOVIES")))), /*#__PURE__*/_react.default.createElement(_Container.default, {
-    style: {
-      display: 'flex'
-    }
+    className: "container_register"
   }, /*#__PURE__*/_react.default.createElement(_Form.default, {
-    style: {
-      fontSize: '28px',
-      maxWidth: '500px',
-      textAlign: 'center',
-      margin: '0 auto',
-      marginTop: '170px',
-      background: 'rgba(255, 255, 255, 0.26)',
-      padding: '30px',
-      borderRadius: '4px'
-    }
+    className: "form_register"
   }, /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
     controlId: "formName"
   }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, {
-    style: {
-      fontSize: '22px',
-      float: 'left',
-      width: '100px'
-    }
+    className: "form_label_register"
   }, "Username:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    style: {
-      textAlign: 'center',
-      width: '250px',
-      margin: '0 auto',
-      fontSize: '20px'
-    },
+    className: "form_input_register",
     type: "text",
     onChange: function onChange(e) {
       return setName(e.target.value);
@@ -42806,18 +42788,9 @@ function RegistrationView() {
   }), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
     controlId: "formPassword"
   }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, {
-    style: {
-      fontSize: '22px',
-      float: 'left',
-      width: '100px'
-    }
+    className: "form_label_register"
   }, "Password:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    style: {
-      textAlign: 'center',
-      fontSize: '20px',
-      width: '250px',
-      margin: '0 auto'
-    },
+    className: "form_input_register",
     type: "password",
     onChange: function onChange(e) {
       return setPassword(e.target.value);
@@ -42833,18 +42806,9 @@ function RegistrationView() {
   }), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
     controlId: "formEmail"
   }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, {
-    style: {
-      fontSize: '22px',
-      float: 'left',
-      width: '100px'
-    }
+    className: "form_label_register"
   }, "Email:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    style: {
-      textAlign: 'center',
-      fontSize: '20px',
-      width: '250px',
-      margin: '0 auto'
-    },
+    className: "form_input_register",
     type: "email",
     onChange: function onChange(e) {
       return setEmail(e.target.value);
@@ -42860,18 +42824,9 @@ function RegistrationView() {
   }), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
     controlId: "formBirthday"
   }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, {
-    style: {
-      fontSize: '22px',
-      float: 'left',
-      width: '100px'
-    }
+    className: "form_label_register"
   }, "Birthday:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    style: {
-      textAlign: 'center',
-      fontSize: '20px',
-      width: '250px',
-      margin: '0 auto'
-    },
+    className: "form_input_register",
     placeholder: "yyyy-mm-dd",
     type: "birthday",
     onChange: function onChange(e) {
@@ -42880,23 +42835,10 @@ function RegistrationView() {
   })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, /*#__PURE__*/_react.default.createElement(_Button.default, {
-    style: {
-      width: '100px',
-      fontSize: '24px',
-      backgroundColor: 'black',
-      border: 'none',
-      color: 'white',
-      textDecoration: 'none'
-    },
+    className: "btn_back_register",
     variant: "link"
   }, "Back")), /*#__PURE__*/_react.default.createElement(_Button.default, {
-    style: {
-      width: '100px',
-      fontSize: '24px',
-      backgroundColor: '#C2A3FF',
-      border: 'none',
-      margin: '10px'
-    },
+    className: "btn_register_submit",
     variant: "primary",
     type: "submit",
     onClick: handleSubmit
@@ -42911,74 +42853,7 @@ RegistrationView.propTypes = {
     birthday: _propTypes.default.string.isRequired
   })
 };
-},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","prop-types":"../node_modules/prop-types/index.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap/esm/Container":"../node_modules/react-bootstrap/esm/Container.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/movie-view/movie-view.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","prop-types":"../node_modules/prop-types/index.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js","../registration-view/registration-view.scss":"components/registration-view/registration-view.scss","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap/esm/Container":"../node_modules/react-bootstrap/esm/Container.js"}],"components/movie-view/movie-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -43899,7 +43774,12 @@ function UpdateProfile(props) {
     onClick: handleUpdate
   }, "Save"))));
 }
-},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./updateprofile-view.scss":"components/updateprofile-view/updateprofile-view.scss"}],"components/navbar-view/navbar-view.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./updateprofile-view.scss":"components/updateprofile-view/updateprofile-view.scss"}],"components/navbar-view/navbar-view.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/navbar-view/navbar-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43918,6 +43798,8 @@ var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
 var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
 
 var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
+
+require("../navbar-view/navbar-view.scss");
 
 var _reactRouterDom = require("react-router-dom");
 
@@ -43982,44 +43864,17 @@ var NavbarView = /*#__PURE__*/function (_React$Component) {
         xs: 12
       }, /*#__PURE__*/_react.default.createElement(_Nav.default, {
         as: "ul",
-        style: {
-          maxHeight: '60px',
-          fontSize: '25px',
-          justifyContent: 'flex-end',
-          backgroundColor: 'rgba(194, 163, 255, 0.8)',
-          minWidth: '100vW'
-        }
+        className: "navbar1234"
       }, /*#__PURE__*/_react.default.createElement(_Container.default, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
         to: "/"
       }, /*#__PURE__*/_react.default.createElement(_Navbar.default.Brand, {
-        style: {
-          position: 'absolute',
-          left: '10px',
-          fontSize: '38px',
-          color: 'white',
-          fontWeight: '800'
-        }
+        className: "logo_style"
       }, "GAMING MOVIES"))), /*#__PURE__*/_react.default.createElement(_Nav.default.Item, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
         to: "/users/".concat(user)
       }, /*#__PURE__*/_react.default.createElement(_Button.default, {
-        style: {
-          borderRadius: '0',
-          fontSize: '25px',
-          height: '53px',
-          color: 'black',
-          backgroundColor: 'white',
-          width: 'auto',
-          textAlign: 'center',
-          textDecoration: 'none',
-          border: 'none'
-        }
+        className: "btn_profile"
       }, "Profile"))), /*#__PURE__*/_react.default.createElement(_Nav.default.Item, null, /*#__PURE__*/_react.default.createElement(_Nav.default.Link, {
-        style: {
-          color: 'white',
-          backgroundColor: 'black',
-          width: 'auto',
-          textAlign: 'center'
-        },
+        className: "btn_logout",
         onClick: function onClick() {
           _this.onLoggedOut();
         }
@@ -44031,7 +43886,7 @@ var NavbarView = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 exports.NavbarView = NavbarView;
-},{"react":"../node_modules/react/index.js","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"components/visibility-filter-input/visibility-filter-input.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","../navbar-view/navbar-view.scss":"components/navbar-view/navbar-view.scss","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"components/visibility-filter-input/visibility-filter-input.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44055,6 +43910,7 @@ function VisibilityFilterInput(props) {
       display: 'block'
     }
   }, /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
+    className: "search_field",
     style: {
       width: '250px',
       margin: '0 auto',
@@ -44211,13 +44067,14 @@ function MoviesList(props) {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Col.default, {
     xs: 12,
     style: {
-      margin: '1em'
+      margin: '2em'
     }
   }, /*#__PURE__*/_react.default.createElement(_visibilityFilterInput.default, {
     visibilityFilter: visibilityFilter
   })), filteredMovies.map(function (m) {
     return /*#__PURE__*/_react.default.createElement(_Col.default, {
-      className: "m-2",
+      className: "m-1",
+      xs: 12,
       sm: 'auto',
       md: 'auto',
       xl: 'auto',
@@ -44403,7 +44260,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
           }, /*#__PURE__*/_react.default.createElement(_Row.default, null, /*#__PURE__*/_react.default.createElement(_Col.default, {
             className: "main-view justify-content-md-center"
           }, /*#__PURE__*/_react.default.createElement(_navbarView.NavbarView, null), /*#__PURE__*/_react.default.createElement("div", {
-            className: "d-flex flex-wrap justify-content-center"
+            className: "d-flex flex-wrap justify-content-md-center"
           }, /*#__PURE__*/_react.default.createElement(_movieslistView.default, {
             movies: movies
           })))));
@@ -44614,12 +44471,7 @@ var GamingMoviesApplication = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/_react.default.createElement(_reactRedux.Provider, {
         store: store
       }, /*#__PURE__*/_react.default.createElement(_Container.default, {
-        className: "container-fluid",
-        style: {
-          fontFamily: 'Teko',
-          minHeight: '100vH',
-          minWidth: '100vW'
-        }
+        className: "container-fluid container1234"
       }, /*#__PURE__*/_react.default.createElement(_mainView.default, null)));
     }
   }]);
@@ -44658,7 +44510,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50578" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62716" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

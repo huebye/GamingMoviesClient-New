@@ -1,5 +1,6 @@
 .card {
-    width: 340px;
+    display: flex;
+    width: 350px;
     margin: 10px;
     border: none;
     min-height: 500px;
@@ -23,6 +24,7 @@
 }
 
 .btn_details {
+    font-size: 19px;
     text-decoration: none;
     color: white;
     position: absolute;
@@ -35,4 +37,22 @@
 .btn_details:hover {
     text-decoration: none;
     color: black;
+}
+
+
+
+@media only screen and (max-width: 650px) {
+
+    .card {
+        width: 380px;
+        min-height: 520px;
+        margin: 0 auto;
+        margin-left: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn_details {
+        font-size: 24px;
+    }
 }

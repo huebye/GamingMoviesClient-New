@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
+import '../registration-view/registration-view.scss'
+
 import { Link } from "react-router-dom";
 import Container from 'react-bootstrap/esm/Container';
 
@@ -71,16 +73,16 @@ export function RegistrationView() {
   
     return (
       <div>
-      <Nav as="ul" style={{ maxHeight: '60px', fontSize: '25px', justifyContent: 'flex-end', backgroundColor: 'rgba(194, 163, 255, 0.8)', minWidth: '100%'}}>
+      <Nav as="ul" className="nav_register">
               <Container>
-                <Link to="/"><Navbar.Brand style={{ position: 'absolute', left: '10px' , fontSize: '44px', color: 'white', fontWeight: '800'}}>GAMING MOVIES</Navbar.Brand></Link>
+                <Link to="/"><Navbar.Brand className="nav_register_logo">GAMING MOVIES</Navbar.Brand></Link>
                 </Container>
         </Nav>
-      <Container style={{display: 'flex'}}>
-        <Form style={{fontSize: '28px', maxWidth: '500px', textAlign: 'center', margin: '0 auto', marginTop: '170px', background: 'rgba(255, 255, 255, 0.26)', padding: '30px', borderRadius: '4px'}}>
+      <Container className="container_register">
+        <Form className="form_register">
         <Form.Group controlId="formName">
-          <Form.Label style={{ fontSize: '22px', float: 'left', width: '100px'}}>Username:</Form.Label>
-          <Form.Control style={{ textAlign: 'center', width: '250px', margin: '0 auto', fontSize: '20px'}} type="text" onChange={e => setName(e.target.value)} />
+          <Form.Label className="form_label_register">Username:</Form.Label>
+          <Form.Control className="form_input_register" type="text" onChange={e => setName(e.target.value)} />
         </Form.Group>
 
         {Object.keys(nameError).map((key) => {
@@ -92,8 +94,8 @@ export function RegistrationView() {
               })}
   
         <Form.Group controlId="formPassword">
-          <Form.Label style={{ fontSize: '22px', float: 'left', width: '100px'}}>Password:</Form.Label>
-          <Form.Control style={{ textAlign: 'center', fontSize: '20px', width: '250px', margin: '0 auto'}}  type="password" onChange={e => setPassword(e.target.value)} />
+          <Form.Label className="form_label_register">Password:</Form.Label>
+          <Form.Control className="form_input_register"  type="password" onChange={e => setPassword(e.target.value)} />
         </Form.Group>
 
         {Object.keys(passwordError).map((key) => {
@@ -105,8 +107,8 @@ export function RegistrationView() {
               })}
 
         <Form.Group controlId="formEmail">
-          <Form.Label style={{ fontSize: '22px', float: 'left', width: '100px'}}>Email:</Form.Label>
-          <Form.Control style={{ textAlign: 'center', fontSize: '20px', width: '250px', margin: '0 auto'}} type="email" onChange={e => setEmail(e.target.value)} />
+          <Form.Label className="form_label_register">Email:</Form.Label>
+          <Form.Control className="form_input_register"type="email" onChange={e => setEmail(e.target.value)} />
         </Form.Group>
 
         {Object.keys(emailError).map((key) => {
@@ -118,15 +120,15 @@ export function RegistrationView() {
               })}
 
         <Form.Group controlId="formBirthday">
-          <Form.Label style={{ fontSize: '22px', float: 'left', width: '100px'}}>Birthday:</Form.Label>
-          <Form.Control style={{ textAlign: 'center', fontSize: '20px', width: '250px', margin: '0 auto'}} placeholder="yyyy-mm-dd" type="birthday" onChange={e => setBirthday(e.target.value)} />
+          <Form.Label className="form_label_register">Birthday:</Form.Label>
+          <Form.Control className="form_input_register" placeholder="yyyy-mm-dd" type="birthday" onChange={e => setBirthday(e.target.value)} />
         </Form.Group>
         <Link to={`/`}>
-        <Button style={{ width: '100px' ,fontSize: '24px' ,backgroundColor: 'black', border: 'none', color: 'white',textDecoration: 'none' }} variant="link">
+        <Button className="btn_back_register" variant="link">
           Back
         </Button>
         </Link>
-        <Button style={{ width: '100px' ,fontSize: '24px' ,backgroundColor: '#C2A3FF', border: 'none', margin: '10px' }} variant="primary" type="submit" onClick={handleSubmit}>
+        <Button className="btn_register_submit" variant="primary" type="submit" onClick={handleSubmit}>
           Register
         </Button>
       </Form>
